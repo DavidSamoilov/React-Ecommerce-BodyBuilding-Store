@@ -38,8 +38,12 @@ const MainPage = () => {
         <Container className="h-100" >
           <Row className="row h-100 align-items-center">
             <Col className="col-12 text-center">
-              <h1 className="display-2">This is DavesGym</h1>
-              <p className="lead">Optimize your training experience </p>
+              <h1 className="display-2 opacity-one">This is DavesGym</h1>
+              <p className="lead opacity-one">Optimize your training experience </p>
+              <Button variant="secondary" className="mt-5" size="lg" active>
+    View Our products
+    <i class="fas fa-long-arrow-alt-down"></i>
+  </Button>
             </Col>
           </Row>
         </Container>
