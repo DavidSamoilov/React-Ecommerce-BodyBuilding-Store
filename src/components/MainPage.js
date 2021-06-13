@@ -31,9 +31,11 @@ const MainPage = () => {
           </Nav>
         </Container>
       </Navbar>
-      {/* intro */}
+      {/* Landing page hero */}
+      
       <div className="image-text">
-        <Container className="h-100">
+        <div id="color-overlay">
+        <Container className="h-100" >
           <Row className="row h-100 align-items-center">
             <Col className="col-12 text-center">
               <h1 className="display-2">This is DavesGym</h1>
@@ -41,6 +43,7 @@ const MainPage = () => {
             </Col>
           </Row>
         </Container>
+          </div>
       </div>
 
       {/* Item filter inputs */}
@@ -51,7 +54,7 @@ const MainPage = () => {
         <Container fluid>
           <Row>
             {/* Side Filters Column */}
-            <Col md={4}>
+            <Col md={3}>
               <Form.Label>Example select</Form.Label>
               <Form.Control as="select">
                 <option>Categories</option>
@@ -101,8 +104,9 @@ const MainPage = () => {
         </div>
               </Col>
 {/* Cards Design */}
-<Col md={8}>
-  <Row>
+<Col md={9}>
+<Container fluid >
+  <Row className="justify-content-around">
 <figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
   <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
   <figcaption>
@@ -134,7 +138,7 @@ const MainPage = () => {
   </figcaption><a href="#"></a>
 </figure>
 </Row>
-  <Row>
+  <Row className="justify-content-around">
 <figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
   <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
   <figcaption>
@@ -168,12 +172,11 @@ const MainPage = () => {
 </Row>
 
 
+</Container>
 </Col>
           </Row>
         </Container>
       </div>
-
-      {/* Cards Display */}
 
       <br />
       <br />
