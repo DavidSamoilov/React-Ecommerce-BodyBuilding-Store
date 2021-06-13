@@ -1,0 +1,11 @@
+.image-text{
+    height: 100vh;
+    min-height: 500px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6c/Man_lifting_a_heavy_barbell.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body {
+    color: white;
+  }
