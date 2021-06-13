@@ -40,8 +40,9 @@ const MainPage = () => {
             <Col className="col-12 text-center">
               <h1 className="display-2 opacity-one">This is DavesGym</h1>
               <p className="lead opacity-one">Optimize your training experience </p>
-              <Button variant="secondary" className="mt-5" size="lg" active>
-    View Our products
+              <Button variant="secondary" href="#shop-header" className="mt-5" size="lg" active>
+                
+    View Our products{" "}  
     <i class="fas fa-long-arrow-alt-down"></i>
   </Button>
             </Col>
@@ -49,6 +50,20 @@ const MainPage = () => {
         </Container>
           </div>
       </div>
+
+      {/* ShopHeader Section */}
+      <Container id="shop-header" className="text-center my-4">
+  <h2>OUR ITEMS</h2>
+
+
+      </Container>
+
+
+
+
+
+
+
 
       {/* Item filter inputs */}
       <div className="my-4">
@@ -58,17 +73,8 @@ const MainPage = () => {
         <Container fluid>
           <Row>
             {/* Side Filters Column */}
-            <Col md={3}>
-              <Form.Label>Example select</Form.Label>
-              <Form.Control as="select">
-                <option>Categories</option>
-                <option>Protein</option>
-                <option>Clothing</option>
-                <option>Gym Equipment</option>
-                <option>Food Supplements</option>
-              </Form.Control>
-
-              <Form.Label>Example select</Form.Label>
+            <Col md={3}>             
+              <Form.Label>Filters</Form.Label>
               <Form.Control as="select">
                 <option>Filter by</option>
                 <option>Top Selling Products</option>
@@ -108,6 +114,7 @@ const MainPage = () => {
         </div>
               </Col>
 {/* Cards Design */}
+
 <Col md={9}>
 <Container fluid >
   <Row className="justify-content-around">
