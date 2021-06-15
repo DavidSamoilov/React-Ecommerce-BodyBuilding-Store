@@ -57,8 +57,8 @@ const MainPage = () => {
       </div>
 
       {/* ShopHeader Section */}
-      <Container id="shop-header" className="text-center my-4">
-  <h2>OUR ITEMS</h2>
+      <Container fluid id="shop-header" className="text-center ">
+  <h2 className="align-items-center">Better Equipment, Faster Results</h2>
 
 
       </Container>
@@ -72,13 +72,15 @@ const MainPage = () => {
 
       {/* Item filter inputs */}
       <div className="my-4">
-        <Form.Control size="lg" type="text" placeholder="Filter by name"/>
         <br />
         {/* Side Filters and Cards container */}
         <Container fluid>
           <Row>
             {/* Side Filters Column */}
-            <Col md={3}>             
+            <Col md={3}>
+            <Form.Label>Search for items by name</Form.Label>
+
+            <Form.Control size="lg" type="text" placeholder="Filter by name"/>
               <Form.Label>Filters</Form.Label>
               <Form.Control as="select">
                 <option>Filter by</option>
