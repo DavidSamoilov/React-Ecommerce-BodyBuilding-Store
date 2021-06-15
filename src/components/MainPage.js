@@ -7,9 +7,14 @@ import { Col, Form, FormControl, Row } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
+
+import styled from "styled-components";
+
+
+
 const MainPage = () => {
   return (
-    <div>
+    <wrapper>
       {/* Nav */}
       <Navbar fixed="top" bg="dark" variant="dark">
         <Container>
@@ -194,7 +199,7 @@ const MainPage = () => {
       <br />
       <br />
       <br />
-    </div>
+    </wrapper>
   );
 };
 
