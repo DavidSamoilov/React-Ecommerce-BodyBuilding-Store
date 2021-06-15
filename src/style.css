@@ -1,200 +1,231 @@
 /* Cards */
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
-.snip1418 {
-  font-family: 'Raleway', Arial, sans-serif;
-  position: relative;
-  overflow: hidden;
-  margin: 10px;
-  min-width: 230px;
-  max-width: 315px;
-  width: 100%;
-  background: #ffffff;
-  text-align: left;
-  color: #000000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  font-size: 16px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-perspective: 20em;
-  perspective: 20em;
+
+/* utilities */
+html{
+    scroll-padding: 50px;
 }
-.snip1418 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+.navbar-nav{
+  color: white !important;
 }
-.snip1418 img {
-  max-width: 100%;
-  vertical-align: top;
-  position: relative;
-}
-.snip1418 .add-to-cart {
+/* Black OverLay for landing page image */
+#color-overlay {
   position: absolute;
+  height: 100%;
+  width: 100%;
   top: 0;
-  right: 0;
-  padding-right: 10px;
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  opacity: 0;
-  background-color: #409ad5;
-  -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.snip1418 .add-to-cart i {
-  display: inline-block;
-  margin-right: 10px;
-  width: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #164666;
-  color: #ffffff;
-  font-size: 1.4em;
-}
-.snip1418 figcaption {
-  padding: 20px;
-}
-.snip1418 h3,
-.snip1418 p {
-  margin: 0;
-}
-.snip1418 h3 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-.snip1418 p {
-  font-size: 0.9em;
-  letter-spacing: 1px;
+
+#color-overlay h1 {
+  font-size: 6rem;
+  letter-spacing: 0px;
+  margin: 0 0 5px;
   font-weight: 400;
 }
-.snip1418 .price {
-  font-weight: 500;
-  font-size: 1.5em;
-  line-height: 48px;
-  letter-spacing: 1px;
+
+#color-overlay p {
+  margin: 0;
+  font-size: 28px;
 }
-.snip1418 .price s {
-  margin-right: 5px;
-  opacity: 0.5;
-  font-size: 0.9em;
+.opacity-one {
+  opacity: 1 !important;
+  color: white;
 }
-.snip1418 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.snip1418:hover .add-to-cart,
-.snip1418.hover .add-to-cart {
-  opacity: 1;
-  -webkit-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-.snip1418:hover .add-to-cart i,
-.snip1418.hover .add-to-cart i {
-  background-color: #2980b9;
-}
-
-
-
-
-
-
 
 /* Landing Page */
-.image-text{
-    height: 100vh;
-    min-height: 500px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6c/Man_lifting_a_heavy_barbell.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.image-text {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6c/Man_lifting_a_heavy_barbell.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 body {
-    color: white;
-    background: slategray;
-  }
+  color: white;
+  background: slategray;
+}
 
-  /* CheckBox */
-  
-  .form-checkbox,
-  .form-radio {
+/* CheckBox */
+
+.form-checkbox,
+.form-radio {
+  position: relative;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+  text-align: left;
+}
+
+.form-checkbox-inline .form-checkbox-label,
+.form-radio-inline .form-radio-label {
+  display: block;
+  margin-right: 1rem;
+}
+
+.form-checkbox-legend,
+.form-radio-legend {
+  margin: 0 0 0.125rem 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-checkbox-label,
+.form-radio-label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  text-align: left;
+  color: rgb(137, 0, 149);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-checkbox-label:hover i,
+.form-radio-label:hover i {
+  color: #337ab7;
+}
+
+.form-checkbox-label span,
+.form-radio-label span {
+  display: block;
+}
+
+.form-checkbox-label input,
+.form-radio-label input {
+  width: auto;
+  opacity: 0.0001;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.form-checkbox-button {
+  position: absolute;
+  user-select: none;
+  display: block;
+  color: black;
+  left: 0;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  transition: color 0.28s ease;
+}
+
+
+/* Cards Design */
+.snip1418 {
+    font-family: "Raleway", Arial, sans-serif;
     position: relative;
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    background: #ffffff;
     text-align: left;
+    color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-perspective: 20em;
+    perspective: 20em;
   }
-  
-  .form-checkbox-inline .form-checkbox-label,
-  .form-radio-inline .form-radio-label {
-    display: block;
-    margin-right: 1rem;
+  .snip1418 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
   }
-  
-  .form-checkbox-legend,
-  .form-radio-legend {
-    margin: 0 0 0.125rem 0;
-    font-weight: 500;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .form-checkbox-label,
-  .form-radio-label {
+  .snip1418 img {
+    max-width: 100%;
+    vertical-align: top;
     position: relative;
-    cursor: pointer;
-    padding-left: 1.5rem;
-    text-align: left;
-    color: rgb(137, 0, 149);
-    display: block;
-    margin-bottom: 0.5rem;
   }
-  
-  .form-checkbox-label:hover i,
-  .form-radio-label:hover i {
-    color: #337ab7;
-  }
-  
-  .form-checkbox-label span,
-  .form-radio-label span {
-    display: block;
-  }
-  
-  .form-checkbox-label input,
-  .form-radio-label input {
-    width: auto;
-    opacity: 0.0001;
+  .snip1418 .add-to-cart {
     position: absolute;
-    left: 0.25rem;
-    top: 0.25rem;
+    top: 0;
+    right: 0;
+    padding-right: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    opacity: 0;
+    background-color: #409ad5;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+  .snip1418 .add-to-cart i {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #164666;
+    color: #ffffff;
+    font-size: 1.4em;
+  }
+  .snip1418 figcaption {
+    padding: 20px;
+  }
+  .snip1418 h3,
+  .snip1418 p {
     margin: 0;
-    padding: 0;
   }
-  
-  .form-checkbox-button {
+  .snip1418 h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .snip1418 p {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  .snip1418 .price {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 48px;
+    letter-spacing: 1px;
+  }
+  .snip1418 .price s {
+    margin-right: 5px;
+    opacity: 0.5;
+    font-size: 0.9em;
+  }
+  .snip1418 a {
     position: absolute;
-    user-select: none;
-    display: block;
-    color: black;
+    top: 0;
+    bottom: 0;
     left: 0;
-    top: 0.25rem;
-    width: 1rem;
-    height: 1rem;
-    z-index: 0;
-    border: 0.125rem solid currentColor;
-    border-radius: 0.0625rem;
-    transition: color 0.28s ease;
+    right: 0;
   }
-  
-  
-  
-  
+  .snip1418:hover .add-to-cart,
+  .snip1418.hover .add-to-cart {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+  .snip1418:hover .add-to-cart i,
+  .snip1418.hover .add-to-cart i {
+    background-color: #2980b9;
+  }

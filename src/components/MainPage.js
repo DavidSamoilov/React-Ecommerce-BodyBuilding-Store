@@ -7,9 +7,14 @@ import { Col, Form, FormControl, Row } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
+
+import styled from "styled-components";
+
+
+
 const MainPage = () => {
   return (
-    <div>
+    <wrapper>
       {/* Nav */}
       <Navbar fixed="top" bg="dark" variant="dark">
         <Container>
@@ -31,17 +36,39 @@ const MainPage = () => {
           </Nav>
         </Container>
       </Navbar>
-      {/* intro */}
+      {/* Landing page hero */}
+      
       <div className="image-text">
-        <Container className="h-100">
+        <div id="color-overlay">
+        <Container className="h-100" >
           <Row className="row h-100 align-items-center">
             <Col className="col-12 text-center">
-              <h1 className="display-2">This is DavesGym</h1>
-              <p className="lead">Optimize your training experience </p>
+              <h1 className="display-2 opacity-one">This is DavesGym</h1>
+              <p className="lead opacity-one">Optimize your training experience </p>
+              <Button variant="secondary" href="#shop-header" className="mt-5" size="lg" active>
+                
+    View Our products{" "}  
+    <i class="fas fa-long-arrow-alt-down"></i>
+  </Button>
             </Col>
           </Row>
         </Container>
+          </div>
       </div>
+
+      {/* ShopHeader Section */}
+      <Container id="shop-header" className="text-center my-4">
+  <h2>OUR ITEMS</h2>
+
+
+      </Container>
+
+
+
+
+
+
+
 
       {/* Item filter inputs */}
       <div className="my-4">
@@ -51,17 +78,8 @@ const MainPage = () => {
         <Container fluid>
           <Row>
             {/* Side Filters Column */}
-            <Col md={4}>
-              <Form.Label>Example select</Form.Label>
-              <Form.Control as="select">
-                <option>Categories</option>
-                <option>Protein</option>
-                <option>Clothing</option>
-                <option>Gym Equipment</option>
-                <option>Food Supplements</option>
-              </Form.Control>
-
-              <Form.Label>Example select</Form.Label>
+            <Col md={3}>             
+              <Form.Label>Filters</Form.Label>
               <Form.Control as="select">
                 <option>Filter by</option>
                 <option>Top Selling Products</option>
@@ -101,8 +119,10 @@ const MainPage = () => {
         </div>
               </Col>
 {/* Cards Design */}
-<Col md={8}>
-  <Row>
+
+<Col md={9}>
+<Container fluid >
+  <Row className="justify-content-around">
 <figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
   <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
   <figcaption>
@@ -134,7 +154,7 @@ const MainPage = () => {
   </figcaption><a href="#"></a>
 </figure>
 </Row>
-  <Row>
+  <Row className="justify-content-around">
 <figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
   <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
   <figcaption>
@@ -168,19 +188,18 @@ const MainPage = () => {
 </Row>
 
 
+</Container>
 </Col>
           </Row>
         </Container>
       </div>
 
-      {/* Cards Display */}
-
       <br />
       <br />
       <br />
       <br />
       <br />
-    </div>
+    </wrapper>
   );
 };
 
