@@ -4,13 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Col, Form, FormControl, Row } from "react-bootstrap";
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 import styled from "styled-components";
-
-
 
 const MainPage = () => {
   return (
@@ -37,38 +34,35 @@ const MainPage = () => {
         </Container>
       </Navbar>
       {/* Landing page hero */}
-      
-      <div className="image-text">
-        <div id="color-overlay">
-        <Container className="h-100" >
-          <Row className="row h-100 align-items-center">
-            <Col className="col-12 text-center">
-              <h1 className="display-2 opacity-one">This is DavesGym</h1>
-              <p className="lead opacity-one">Optimize your training experience </p>
-              <Button variant="secondary" href="#shop-header" className="mt-5" size="lg" active>
-                
-    View Our products{" "}  
-    <i class="fas fa-long-arrow-alt-down"></i>
-  </Button>
-            </Col>
-          </Row>
-        </Container>
+      <div className="hero">
+        <div className="image-text">
+          <div id="color-overlay">
+            <Container className="h-100">
+              <Row className="row h-100 align-items-center">
+                <Col className="col-12 text-center">
+                  <h1 className="display-2 opacity-one">This is DavesGym</h1>
+                  <p className="lead opacity-one">
+                    Optimize your training experience{" "}
+                  </p>
+                  <Button
+                    variant="secondary"
+                    href="#shop-header"
+                    className="mt-5"
+                    size="lg"
+                    active
+                  >
+                    View Our products <i class="fas fa-long-arrow-alt-down"></i>
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
           </div>
+        </div>
       </div>
-
       {/* ShopHeader Section */}
       <Container fluid id="shop-header" className="text-center ">
-  <h2 className="align-items-center">Better Equipment, Faster Results</h2>
-
-
+        <h2 className="align-items-center">Better Equipment, Faster Results</h2>
       </Container>
-
-
-
-
-
-
-
 
       {/* Item filter inputs */}
       <div className="my-4">
@@ -78,9 +72,13 @@ const MainPage = () => {
           <Row>
             {/* Side Filters Column */}
             <Col md={3}>
-            <Form.Label>Search for items by name</Form.Label>
+              <Form.Label>Search for items by name</Form.Label>
 
-            <Form.Control size="lg" type="text" placeholder="Filter by name"/>
+              <Form.Control
+                size="lg"
+                type="text"
+                placeholder="Filter by name"
+              />
               <Form.Label>Filters</Form.Label>
               <Form.Control as="select">
                 <option>Filter by</option>
@@ -92,106 +90,194 @@ const MainPage = () => {
 
               {/* CheckBoxFilter */}
               <div class="form-checkbox form-checkbox-inline">
-            <div class="form-checkbox-legend">Categories</div>
-            <div class="form-checkbox-label">
-                <input name={"rap"} class="form-checkbox-field" type="checkbox" />
-                <i class="form-checkbox-button"></i>
-                <span>Clothing</span>
-            </div>
-            <div class="form-checkbox-label">
-                <input name={"pop"} class="form-checkbox-field" type="checkbox" />
-                <i class="form-checkbox-button"></i>
-                <span>Gym equipment</span>
-            </div>
-            <div class="form-checkbox-label">
-                <input name={"rock"} class="form-checkbox-field" type="checkbox" />
-                <i class="form-checkbox-button"></i>
-                <span>Protein Products</span>
-            </div>
-            <div class="form-checkbox-label">
-                <input name={"metal"} class="form-checkbox-field" type="checkbox" />
-                <i class="form-checkbox-button"></i>
-                <span>Food supplements</span>
-            </div>
-            <div class="form-checkbox-label">
-                <input name={"r_b"} class="form-checkbox-field" type="checkbox" />
-                <i class="form-checkbox-button"></i>
-                <span>R&amp;B</span>
-            </div>
-        </div>
-              </Col>
-{/* Cards Design */}
+                <div class="form-checkbox-legend">Categories</div>
+                <div class="form-checkbox-label">
+                  <input
+                    name={"rap"}
+                    class="form-checkbox-field"
+                    type="checkbox"
+                  />
+                  <i class="form-checkbox-button"></i>
+                  <span>Clothing</span>
+                </div>
+                <div class="form-checkbox-label">
+                  <input
+                    name={"pop"}
+                    class="form-checkbox-field"
+                    type="checkbox"
+                  />
+                  <i class="form-checkbox-button"></i>
+                  <span>Gym equipment</span>
+                </div>
+                <div class="form-checkbox-label">
+                  <input
+                    name={"rock"}
+                    class="form-checkbox-field"
+                    type="checkbox"
+                  />
+                  <i class="form-checkbox-button"></i>
+                  <span>Protein Products</span>
+                </div>
+                <div class="form-checkbox-label">
+                  <input
+                    name={"metal"}
+                    class="form-checkbox-field"
+                    type="checkbox"
+                  />
+                  <i class="form-checkbox-button"></i>
+                  <span>Food supplements</span>
+                </div>
+                <div class="form-checkbox-label">
+                  <input
+                    name={"r_b"}
+                    class="form-checkbox-field"
+                    type="checkbox"
+                  />
+                  <i class="form-checkbox-button"></i>
+                  <span>R&amp;B</span>
+                </div>
+              </div>
+            </Col>
+            {/* Cards Design */}
 
-<Col md={9}>
-<Container fluid >
-  <Row className="justify-content-around">
-<figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Pudol Doux</h3>
-    <p>All this modern technology just makes people try to do everything at once.</p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1418 hover"><img src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit" width="300" height="300" alt="sample96"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Kurie Secco</h3>
-    <p>If you do the job badly enough, sometimes you don't get asked to do it again. </p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1418"><img src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg" width="300" height="300" alt="sample92"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Zosaisan Invec</h3>
-    <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life. </p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-</Row>
-  <Row className="justify-content-around">
-<figure class="snip1418"><img src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg" width="300" height="300" alt="sample85"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Pudol Doux</h3>
-    <p>All this modern technology just makes people try to do everything at once.</p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1418 hover"><img src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit" width="300" height="300" alt="sample96"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Kurie Secco</h3>
-    <p>If you do the job badly enough, sometimes you don't get asked to do it again. </p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1418"><img src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg" width="300" height="300" alt="sample92"/>
-  <div class="add-to-cart"> <i class="ion-android-add"></i><span>Add to Cart</span></div>
-  <figcaption>
-    <h3>Zosaisan Invec</h3>
-    <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life. </p>
-    <div class="price">
-      <s>$24.00</s>$19.00
-    </div>
-  </figcaption><a href="#"></a>
-</figure>
-</Row>
-
-
-</Container>
-</Col>
+            <Col md={9}>
+              <Container fluid>
+                <Row className="justify-content-around">
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg"
+                      width="300"
+                      height="300"
+                      alt="sample85"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>GymShark T-Shirt</h3>
+                      <p>GymShark Cotton T-shirt made for training athletes</p>
+                      <div class="price">
+                        <s>$24.00</s>$19.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit"
+                      width="300"
+                      height="300"
+                      alt="sample96"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>Whey Protein Vanilla flavor 2.5kg</h3>
+                      <p>Premium Whey protein powder</p>
+                      <div class="price">
+                        <s>$24.00</s>$19.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg"
+                      width="300"
+                      height="300"
+                      alt="sample92"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>Home Gym Squat rack</h3>
+                      <p>Gym rack made for home Gyms</p>
+                      <br></br>
+                      <p>Free shipping inside of israel</p>
+                      <div class="price">
+                        <s>$1204.00</s>$999.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                </Row>
+                <Row className="justify-content-around">
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg"
+                      width="300"
+                      height="300"
+                      alt="sample85"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>GymShark T-Shirt</h3>
+                      <p>GymShark Cotton T-shirt made for training athletes</p>
+                      <div class="price">
+                        <s>$24.00</s>$19.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit"
+                      width="300"
+                      height="300"
+                      alt="sample96"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>Whey Protein Vanilla flavor 2.5kg</h3>
+                      <p>Premium Whey protein powder</p>
+                      <div class="price">
+                        <s>$24.00</s>$19.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1418 hover">
+                    <img
+                      src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg"
+                      width="300"
+                      height="300"
+                      alt="sample92"
+                    />
+                    <div class="add-to-cart">
+                      {" "}
+                      <i class="ion-android-add"></i>
+                      <span>Add to Cart</span>
+                    </div>
+                    <figcaption>
+                      <h3>Home Gym Squat rack</h3>
+                      <p>Gym rack made for home Gyms</p>
+                      <br></br>
+                      <p>Free shipping inside of israel</p>
+                      <div class="price">
+                        <s>$1204.00</s>$999.00
+                      </div>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                </Row>
+              </Container>
+            </Col>
           </Row>
         </Container>
       </div>

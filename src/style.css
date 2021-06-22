@@ -42,12 +42,9 @@ body {
   margin: 0;
   font-size: 28px;
 }
-.opacity-one {
-  opacity: 1 !important;
-  color: white;
-}
 
 /* Landing Page */
+
 .image-text {
   height: 100vh;
   min-height: 500px;
