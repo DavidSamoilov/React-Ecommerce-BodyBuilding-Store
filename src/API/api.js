@@ -1,21 +1,38 @@
-const usersDal = [
-  { id: 1, email: "test@gmail.com", password: "123456",is_admin:true },
-  { id: 2, email: "asdasdasdas@gmail.com", password: "zxcxzq123",is_admin:false },
-  { id: 3, email: "David@gmail.com", password: "david1212" ,is_admin:false},
-];
-
 const api = (() => {
+  const usersDal = [
+    { id: 1, email: "test@gmail.com", password: "123456", is_admin: true },
+    {
+      id: 2,
+      email: "asdasdasdas@gmail.com",
+      password: "zxcxzq123",
+      is_admin: false,
+    },
+    { id: 3, email: "David@gmail.com", password: "david1212", is_admin: false },
+  ];
+
   const checkLoginDetails = (email, password) => {
-    usersDal.forEach((user) => {
-      if (user.email === email && user.password === password) {
-        return user;
-        // Or login user 
-      }
-    })
-    return false
-    
+    return usersDal.find(
+      (user) => user.email === email && user.password === password
+    );
   };
-  console.log(checkLoginDetails("test@gmail.com","123456"));
+
+  // If a user return it will Login the user and show him his details
+  console.log(checkLoginDetails("test@gmail.com", "123456"));
+  console.log(checkLoginDetails("test@gmail.com", "654321"));
+
+  const checkIfUserMailInDataBase = (email) => !!usersDal.find((user) => (user.email === email));
+
+  console.log(checkIfUserMailInDataBase("David@gmail.com"));
+
+  const addNewUserToDataBase = (email, password) => {
+    return checkIfUserMailInDataBase(email)
+      ? false
+      : usersDal.push({ id: usersDal.length + 1, email, password, is_admin: 0 });
+  };
+
+  addNewUserToDataBase("Etiel@gmail.com", "newuser123");
+
+  console.log("newUser",usersDal);
 
   const getCategories = async () => {
     // This select will get me an array of objects{ categories names, and ids}
