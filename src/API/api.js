@@ -24,13 +24,17 @@ const api = (() => {
 
   console.log(checkIfUserMailInDataBase("David@gmail.com"));
 
-  const addNewUserToDataBase = (email, password) => {
-    return checkIfUserMailInDataBase(email)
-      ? false
-      : usersDal.push({ id: usersDal.length + 1, email, password, is_admin: 0 });
+  const addNewUser = async (email, password) => {
+    //const res = await fetch('/add-user');
+    //check res and respond to client
+    if(checkIfUserMailInDataBase(email)){
+      return false;
+    }
+    const newId = usersDal.push({ id: usersDal.length + 1, email, password, is_admin: 0 });
+    return newId;
   };
 
-  addNewUserToDataBase("Etiel@gmail.com", "newuser123");
+  addNewUser("Etiel@gmail.com", "newuser123");
 
   console.log("newUser",usersDal);
 
