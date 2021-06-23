@@ -1,4 +1,6 @@
 const api = (() => {
+
+  // Users table
   const usersDal = [
     { id: 1, email: "test@gmail.com", password: "123456", is_admin: true },
     {
@@ -10,69 +12,100 @@ const api = (() => {
     { id: 3, email: "David@gmail.com", password: "david1212", is_admin: false },
   ];
 
+  // user Tries to login
   const checkLoginDetails = (email, password) => {
     return usersDal.find(
       (user) => user.email === email && user.password === password
     );
   };
 
-  // If a user return it will Login the user and show him his details
+  // returns user details if true else returns undefined
+
+
+  // correct login test
   console.log(checkLoginDetails("test@gmail.com", "123456"));
+  // incorrect user login
   console.log(checkLoginDetails("test@gmail.com", "654321"));
 
-  const checkIfUserMailInDataBase = (email) => !!usersDal.find((user) => (user.email === email));
 
+  
+  const checkIfUserMailInDataBase = (email) =>
+    !!usersDal.find((user) => user.email === email);
+
+
+    // returns true/false if user mail in db
   console.log(checkIfUserMailInDataBase("David@gmail.com"));
 
   const addNewUser = async (email, password) => {
     //const res = await fetch('/add-user');
     //check res and respond to client
-    if(checkIfUserMailInDataBase(email)){
+    if (checkIfUserMailInDataBase(email)) {
       return false;
     }
-    const newId = usersDal.push({ id: usersDal.length + 1, email, password, is_admin: 0 });
+    const newId = usersDal.push({
+      id: usersDal.length + 1,
+      email,
+      password,
+      is_admin: 0,
+    });
     return newId;
   };
 
+  // successful 
   addNewUser("Etiel@gmail.com", "newuser123");
+  // console.log("newUser", usersDal);
 
-  console.log("newUser",usersDal);
+  const categoriesDal = [
+    { id: 1, name: "Clothing" ,parent_category:undefined},
+    { id: 2, name: "Shirts" ,parent_category:"Clothing"},
+    { id: 3, name: "Pants" ,parent_category:"Clothing"},
+  ];  
 
-  const getCategories = async () => {
-    // This select will get me an array of objects{ categories names, and ids}
+const checkIfCategoryNameExists = (name) => {
+  return !!categoriesDal.find(category => category.name == name)
+}
+  const addNewCategory = (name,parent_category)=>{
+    if(checkIfCategoryNameExists(name)){
+        return false
+    }
+    categoriesDal.push({id:categoriesDal.length,name,parent_category})
+    return true
+      
+  }
+  addNewCategory("Pants")
+  addNewCategory("Pants")
+  addNewCategory("Shoes", "Clothing")
+  addNewCategory("Gym_Equipment")
+  console.log(categoriesDal);
 
-    let categoriesArray = Promise.resolve([
-      { id: 1, category: "Protein" },
-      { id: 2, category: "Shirts" },
-      { id: 3, category: "Pants" },
-    ]);
+  const productDetails =[
+    {
+      id:1,
+      name: "Protein Powder",
+      short_desc: "Vanilla tasting protein bar 2.5 kg",
+      long_desc: "lorem lorem lorem lorem lorem lorem lorem ",
+      price: 159,
+    },
+    {
+      id:2,
+      name: "Shirt",
+      short_desc: "Workout Shirt",
+      long_desc: "lorem lorem lorem lorem lorem lorem lorem ",
+      image: 59,
+    },
+    {
+      id:3,
+      name: "Barbell",
+      short_desc: "Workout Barbell",
+      long_desc: "lorem lorem lorem lorem lorem lorem lorem ",
+      image: 300,
+    },
+  ]
 
-    return categoriesArray;
-  };
-  getCategories().then((result) => console.log(result));
 
-  const getProductDetailsForDisplay = () => {
-    let productDetails = Promise.resolve([
-      {
-        name: "Protein Powder",
-        small_desc: "Vanilla tasting protein bar 2.5 kg",
-        big_desc: "lorem lorem lorem lorem lorem lorem lorem ",
-        image: "png",
-        categories: "Protein Food_Supplements",
-      },
-      {
-        name: "Shirt",
-        small_desc: "Workout Shirt",
-        big_desc: "lorem lorem lorem lorem lorem lorem lorem ",
-        image: "png",
-        categories: "Shirts Clothing",
-      },
-    ]);
 
     // DataBase will fetch different items depending on what filters it will receive
-    return productDetails;
-  };
-  getProductDetailsForDisplay().then((result) => console.log(result));
+  
 
   const getUserCartProducts = async (userID) => {
     // This select will take the userID and find all items in cart table that have the same id
@@ -93,3 +126,5 @@ const api = (() => {
     getUserCartProducts,
   };
 })();
+
+export default api;
