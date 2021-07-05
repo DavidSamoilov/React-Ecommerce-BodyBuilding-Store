@@ -6,12 +6,17 @@ import Nav from "react-bootstrap/Nav";
 import { Col, Form, FormControl, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
+import axios from "axios";
 import styled from "styled-components";
 
 const MainPage = () => {
+  axios.get("/products").then(res => {
+    console.log(res);
+    console.log(1);
+  })
+
   return (
-    <wrapper>
+    <div>
       {/* Nav */}
       <Navbar fixed="top" bg="dark" variant="dark">
         <Container>
@@ -28,7 +33,7 @@ const MainPage = () => {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Login/Register</Nav.Link>
             <Nav.Link href="#Cart">
-              <i class="fas fa-shopping-cart"></i>
+              <i className="fas fa-shopping-cart"></i>
             </Nav.Link>
           </Nav>
         </Container>
@@ -51,7 +56,8 @@ const MainPage = () => {
                     size="lg"
                     active
                   >
-                    View Our products <i class="fas fa-long-arrow-alt-down"></i>
+                    View Our products{" "}
+                    <i className="fas fa-long-arrow-alt-down"></i>
                   </Button>
                 </Col>
               </Row>
@@ -89,51 +95,51 @@ const MainPage = () => {
               </Form.Control>
 
               {/* CheckBoxFilter */}
-              <div class="form-checkbox form-checkbox-inline">
-                <div class="form-checkbox-legend">Categories</div>
-                <div class="form-checkbox-label">
+              <div className="form-checkbox form-checkbox-inline">
+                <div className="form-checkbox-legend">Categories</div>
+                <div className="form-checkbox-label">
                   <input
                     name={"rap"}
-                    class="form-checkbox-field"
+                    className="form-checkbox-field"
                     type="checkbox"
                   />
-                  <i class="form-checkbox-button"></i>
+                  <i className="form-checkbox-button"></i>
                   <span>Clothing</span>
                 </div>
-                <div class="form-checkbox-label">
+                <div className="form-checkbox-label">
                   <input
                     name={"pop"}
-                    class="form-checkbox-field"
+                    className="form-checkbox-field"
                     type="checkbox"
                   />
-                  <i class="form-checkbox-button"></i>
+                  <i className="form-checkbox-button"></i>
                   <span>Gym equipment</span>
                 </div>
-                <div class="form-checkbox-label">
+                <div className="form-checkbox-label">
                   <input
                     name={"rock"}
-                    class="form-checkbox-field"
+                    className="form-checkbox-field"
                     type="checkbox"
                   />
-                  <i class="form-checkbox-button"></i>
+                  <i className="form-checkbox-button"></i>
                   <span>Protein Products</span>
                 </div>
-                <div class="form-checkbox-label">
+                <div className="form-checkbox-label">
                   <input
                     name={"metal"}
-                    class="form-checkbox-field"
+                    className="form-checkbox-field"
                     type="checkbox"
                   />
-                  <i class="form-checkbox-button"></i>
+                  <i className="form-checkbox-button"></i>
                   <span>Food supplements</span>
                 </div>
-                <div class="form-checkbox-label">
+                <div className="form-checkbox-label">
                   <input
                     name={"r_b"}
-                    class="form-checkbox-field"
+                    className="form-checkbox-field"
                     type="checkbox"
                   />
-                  <i class="form-checkbox-button"></i>
+                  <i className="form-checkbox-button"></i>
                   <span>R&amp;B</span>
                 </div>
               </div>
@@ -143,58 +149,58 @@ const MainPage = () => {
             <Col md={9}>
               <Container fluid>
                 <Row className="justify-content-around">
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg"
                       width="300"
                       height="300"
                       alt="sample85"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
                       <h3>GymShark T-Shirt</h3>
                       <p>GymShark Cotton T-shirt made for training athletes</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$24.00</s>$19.00
                       </div>
                     </figcaption>
                     <a href="#"></a>
                   </figure>
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit"
                       width="300"
                       height="300"
                       alt="sample96"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
                       <h3>Whey Protein Vanilla flavor 2.5kg</h3>
                       <p>Premium Whey protein powder</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$24.00</s>$19.00
                       </div>
                     </figcaption>
                     <a href="#"></a>
                   </figure>
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg"
                       width="300"
                       height="300"
                       alt="sample92"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
@@ -202,7 +208,7 @@ const MainPage = () => {
                       <p>Gym rack made for home Gyms</p>
                       <br></br>
                       <p>Free shipping inside of israel</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$1204.00</s>$999.00
                       </div>
                     </figcaption>
@@ -210,58 +216,58 @@ const MainPage = () => {
                   </figure>
                 </Row>
                 <Row className="justify-content-around">
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://i.pinimg.com/originals/1e/60/78/1e6078cf9016b224125aeb8105aa08ee.jpg"
                       width="300"
                       height="300"
                       alt="sample85"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
                       <h3>GymShark T-Shirt</h3>
                       <p>GymShark Cotton T-shirt made for training athletes</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$24.00</s>$19.00
                       </div>
                     </figcaption>
                     <a href="#"></a>
                   </figure>
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://www.gnc.com/dw/image/v2/BBLB_PRD/on/demandware.static/-/Sites-master-catalog-gnc/default/dwec6d50db/hi-res/350283_web_Optimum%20Nutrition%20GSW_5LB_VanillaIceCream_Front_.jpg?sw=2000&sh=2000&sm=fit"
                       width="300"
                       height="300"
                       alt="sample96"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
                       <h3>Whey Protein Vanilla flavor 2.5kg</h3>
                       <p>Premium Whey protein powder</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$24.00</s>$19.00
                       </div>
                     </figcaption>
                     <a href="#"></a>
                   </figure>
-                  <figure class="snip1418 hover">
+                  <figure className="snip1418 hover">
                     <img
                       src="https://images-na.ssl-images-amazon.com/images/I/61%2Bt5uT1vpL._AC_SL1500_.jpg"
                       width="300"
                       height="300"
                       alt="sample92"
                     />
-                    <div class="add-to-cart">
+                    <div className="add-to-cart">
                       {" "}
-                      <i class="ion-android-add"></i>
+                      <i className="ion-android-add"></i>
                       <span>Add to Cart</span>
                     </div>
                     <figcaption>
@@ -269,7 +275,7 @@ const MainPage = () => {
                       <p>Gym rack made for home Gyms</p>
                       <br></br>
                       <p>Free shipping inside of israel</p>
-                      <div class="price">
+                      <div className="price">
                         <s>$1204.00</s>$999.00
                       </div>
                     </figcaption>
@@ -287,7 +293,7 @@ const MainPage = () => {
       <br />
       <br />
       <br />
-    </wrapper>
+    </div>
   );
 };
 
