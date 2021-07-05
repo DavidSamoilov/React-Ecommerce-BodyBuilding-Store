@@ -1,11 +1,11 @@
-import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {LoginRegister} from "./pages"
 
 function App() {
   return (
   <>
-    <MainPage/>
+    <HomePage/>
     <LoginRegister/>
     </>
     )

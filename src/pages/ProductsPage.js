@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ErrorPage = () => {
+const ProductsPage = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ErrorPage = () => {
     )
 }
 
-export default ErrorPage
+export default ProductsPage

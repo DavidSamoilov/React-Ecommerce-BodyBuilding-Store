@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import styled from "styled-components";
 
-const MainPage = () => {
+const HomePage = () => {
   axios.get("/products").then(res => {
     console.log(res);
     console.log(1);
@@ -297,4 +297,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;

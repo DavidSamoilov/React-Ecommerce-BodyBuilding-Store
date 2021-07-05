@@ -8,4 +8,4 @@ const AboutPage = () => {
     )
 }
 
-export {AboutPage}
+export default AboutPage
