@@ -50,4 +50,16 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+const sequelize = new Sequelize('bodybuilding_db', 'root', 'password7117', {
+  host: 'localhost',
+  dialect:'mysql'
+});
+
+(async()=>{
+try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}})()
 module.exports = app;

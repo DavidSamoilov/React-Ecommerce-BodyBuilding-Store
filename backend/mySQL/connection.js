@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
   user,
   database,
   password,
+  connectTimeout: 30000
 });
 
 module.exports = connection;
