@@ -50,16 +50,16 @@ function initModels(sequelize) {
   users.hasMany(user_address, { as: "user_addresses", foreignKey: "user_id"});
 
   return {
-    cart,
-    categories,
-    images,
+    Cart:cart,
+    Categories:categories,
+    Images:images,
     order_details,
-    orders,
+    Orders:orders,
     product_categories,
-    products,
+    Products:products,
     products_inventory,
     user_address,
-    users,
+    Users:users,
   };
 }
 module.exports = initModels;

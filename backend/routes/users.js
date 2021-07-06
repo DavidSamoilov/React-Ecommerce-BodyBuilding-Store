@@ -2,21 +2,16 @@ const express = require("express");
 const router = express.Router();
 const app = require("../app");
 const connection = require("../MySQL/connection");
-const models =  require("../models/")
+const { Users } = require("../models");
 
 // Gets all Users
 router
   .get("/", async (req, res) => {
-    console.log(models.users);
-    try{
-      models.users.findAll().then(
-        users => res.json(users))
-    }catch{
-      res.send("500")
+    try {
+      Users.findAll().then((users) => res.json(users));
+    } catch {
+      res.send("500");
     }
-      
-
-
 
     // connection.query("SELECT * FROM users", function (err, results, fields) {
     //   if (err) throw err;
@@ -27,7 +22,7 @@ router
     // REGISTER
     // #Todo add validation to data
     "/",
-     (req, res) => {
+    (req, res) => {
       const post = req.body;
       const { name, email, password } = post;
 
@@ -76,14 +71,13 @@ router.get("/:id", (req, res) => {
   );
 });
 
-
 //  Login
 // #TODO add the function to actually login the user to the site
 router.post("/login", (req, res) => {
   if (!req.body) return res.status(500).send("Can't be empty");
   connection.query(
     "SELECT * FROM users WHERE email = ? AND password = ?",
-    [req.body.email , req.body.password],
+    [req.body.email, req.body.password],
     function (err, results, fields) {
       if (err) throw err;
       if (results == []) return res.send("Incorrect email or password");
