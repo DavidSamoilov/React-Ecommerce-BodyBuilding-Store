@@ -1,15 +1,15 @@
 // get the client
 const mysql = require("mysql2");
-const db = require("../config/db.config")
+const db = require("../config/db.config");
 // create the connection to database
 
-const {host,user,database,password} = db
+const { host, user, database, password, pool } = db;
 const connection = mysql.createConnection({
   host,
   user,
   database,
   password,
-  connectTimeout: 30000
+  pool,
 });
 
 module.exports = connection;

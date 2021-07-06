@@ -5,6 +5,17 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 const { Sequelize } = require('sequelize');
+// const bodyParser = require("body-parser");
+
+
+
+// Test code
+const bodyParser = require("body-parser");
+var corsOptions = {
+  origin: "http://localhost:5000"
+};
+
+
 
 const port = 5000;
 var app = express();
@@ -50,6 +61,9 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+const db = require("./models");
+db.sequelize.sync();
+
 const sequelize = new Sequelize('bodybuilding_db', 'root', 'password7117', {
   host: 'localhost',
   dialect:'mysql'
@@ -62,4 +76,9 @@ try {
 } catch (error) {
   console.error('Unable to connect to the database:', error);
 }})()
+
+
+// var initModels = require("./models/init-models");
+// var models = initModels(Sequelize);
+
 module.exports = app;

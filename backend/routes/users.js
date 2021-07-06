@@ -4,6 +4,11 @@ const app = require("../app");
 const connection = require("../MySQL/connection");
 
 // Gets all Users
+
+// models.User.findAll({ where: { id: 1 }}).then(res=>console.log(res));
+
+
+
 router
   .get("/", (req, res) => {
     connection.query("SELECT * FROM users", function (err, results, fields) {
