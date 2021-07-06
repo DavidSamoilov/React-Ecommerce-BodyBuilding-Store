@@ -1,5 +1,5 @@
 const dbConfig = require("../config/db.config");
-
+const initModels = require("./init-models")
 const {host,user,database,password,pool} = dbConfig
 
 const Sequelize = require("sequelize");
@@ -15,6 +15,4 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-
-db.users = require("./users")(sequelize, Sequelize);
-module.exports = db;
+module.exports = initModels(sequelize);
