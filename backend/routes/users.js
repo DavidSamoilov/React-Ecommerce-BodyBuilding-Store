@@ -2,14 +2,25 @@ const express = require("express");
 const router = express.Router();
 const app = require("../app");
 const connection = require("../MySQL/connection");
+const models = require("../models")
 
 // Gets all Users
 router
-  .get("/", (req, res) => {
-    connection.query("SELECT * FROM users", function (err, results, fields) {
-      if (err) throw err;
-      res.json(results); // results contains rows returned by server
-    });
+  .get("/", async (req, res) => {
+    try{
+      models.users.findAll().then(
+        users => res.json(users))
+    }catch{
+      res.status(500)
+    }
+      
+
+
+
+    // connection.query("SELECT * FROM users", function (err, results, fields) {
+    //   if (err) throw err;
+    //   res.json(results); // results contains rows returned by server
+    // });
   })
   .post(
     // REGISTER
