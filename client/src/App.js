@@ -1,4 +1,4 @@
-import HomePage from "./pages/HomePage";
+import Home from "./pages/HomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 

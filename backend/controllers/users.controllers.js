@@ -34,7 +34,13 @@ exports.create = (req, res) => {
 };
 
 // Retrieve all users from the database.
-exports.findAll = (req, res) => {};
+exports.findAll = (req, res) => {
+  try {
+    User.findAll().then((users) => res.json(users));
+  } catch {
+    res.send("500");
+  }
+};
 
 // Find a single user with an id
 exports.findOne = (req, res) => {
@@ -51,13 +57,54 @@ exports.findOne = (req, res) => {
 };
 
 // Update a user by the id in the request
-exports.update = (req, res) => {};
+exports.update = (req, res) => {
+  const id = req.params.id;
+
+  User.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Tutorial was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Tutorial with id=" + id
+      });
+    });
+};
 
 // Delete a user with the specified id in the request
-exports.delete = (req, res) => {};
+exports.delete = (req, res) => {
+  const id = req.params.id;
+  User.destroy({
+    where: {id}
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "User was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete user with id=${id}. Maybe user was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Tutorial with id=" + id
+      });
+    });
 
-// Delete all users from the database.
-exports.deleteAll = (req, res) => {};
+};
 
 // Find all published users
 exports.findAllPublished = (req, res) => {};

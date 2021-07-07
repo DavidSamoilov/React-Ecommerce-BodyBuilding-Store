@@ -6,32 +6,26 @@ const usersAPI = require("../controllers/users.controllers");
 
 // import sequelize User
 const { users } = require("../models");
-const User = users
-
+const User = users;
 
 // Gets all Users
-router
-  .get("/", async (req, res) => {
-    try {
-      User.findAll().then((users) => res.json(users));
-    } catch {
-      res.send("500");
-    }
+// #TODO add categories arr
+router.get("/", usersAPI.findAll);
 
-    // connection.query("SELECT * FROM users", function (err, results, fields) {
-    //   if (err) throw err;
-    //   res.json(results); // results contains rows returned by server
-    // });
-  })
-  .post(
-    // REGISTER
-    "/",
-    usersAPI.create   
-  );
+// REGISTER
+router.post("/", usersAPI.create);
 
 // Get single member by id
 // #Todo get rid if else statement with return somehow
 router.get("/:id", usersAPI.findOne);
+
+// Update Member
+// TODO not working
+router.put("/:id", usersAPI.delete);
+
+// Delete Member
+// TODO not working
+router.delete("/:id", usersAPI.delete);
 
 //  Login
 // #TODO add the function to actually login the user to the site
@@ -47,39 +41,6 @@ router.post("/login", (req, res) => {
       res.json(results); // results contains rows returned by server
     }
   );
-});
-
-// Update Member
-// TODO not working
-router.put("/:id", (req, res) => {
-  const found = Members.some((user) => user.id === parseInt(req.params.id));
-  if (found) {
-    const updMember = req.body;
-    const member = Members.find(
-      (member) => member.id === parseInt(req.params.id)
-    );
-    if (member) {
-      member.name = updMember.name ? updMember.name : member.name;
-      member.email = updMember.email ? updMember.email : member.email;
-      res.json({ msg: "Member updated", member });
-    }
-  } else {
-    res.status(400).json({ msg: `No member with the id of ${req.params.id}` });
-  }
-});
-
-// Delete Member
-// TODO not working
-router.delete("/:id", (req, res) => {
-  const found = Members.some((user) => user.id === parseInt(req.params.id));
-  if (found) {
-    res.json({
-      msg: "Member deleted",
-      Members: Members.filter((user) => user.id !== parseInt(req.params.id)),
-    });
-  } else {
-    res.status(400).json({ msg: `No member with the id of ${req.params.id}` });
-  }
 });
 
 module.exports = router;
