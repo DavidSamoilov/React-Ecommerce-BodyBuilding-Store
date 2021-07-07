@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const app = require("../app");
 const connection = require("../MySQL/connection");
+// import user api
+const usersAPI = require("../controllers/users.controllers");
+
+// import sequelize User
 const { users } = require("../models");
 const User = users
+
 
 // Gets all Users
 router
@@ -21,56 +25,13 @@ router
   })
   .post(
     // REGISTER
-    // #Todo add validation to data
     "/",
-    (req, res) => {
-      const post = req.body;
-      const { name, email, password } = post;
-
-      if (!(name && email && password)) {
-        return res
-          .status(400)
-          .json({ msg: "Please include a name ,email and password" });
-      } else {
-        connection.query(
-          "SELECT id FROM users WHERE `email` = ?",
-          [email],
-          (error, result) => {
-            if (result[0]) {
-              res.send({ msg: "User with email address already exists" });
-            } else {
-              connection.query(
-                "INSERT INTO users (email, password, first_name) VALUES (?,?,?)",
-                [email, password, name],
-                () => {
-                  res.json({ msg: "User added" });
-                }
-              );
-            }
-          }
-        );
-      }
-    }
+    usersAPI.create   
   );
 
 // Get single member by id
 // #Todo get rid if else statement with return somehow
-router.get("/:id", (req, res) => {
-  connection.query(
-    "SELECT * FROM `users` WHERE `id` = ?",
-    [req.params.id],
-    function (err, results, fields) {
-      if (err || results == false) {
-        res
-          .status(400)
-          .json({ msg: `No member with the id of ${req.params.id}` });
-      } else {
-        res.json(results); // results contains rows returned by server
-      }
-      // console.log(fields); // fields contains extra meta data about results, if available
-    }
-  );
-});
+router.get("/:id", usersAPI.findOne);
 
 //  Login
 // #TODO add the function to actually login the user to the site

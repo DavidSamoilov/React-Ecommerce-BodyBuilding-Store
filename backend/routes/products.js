@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const connection = require("../MySQL/connection");
-const { products, images } = require("../models/");
+const { products } = require("../models/");
 const Products = products
 
 // Gets all Users
