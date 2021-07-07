@@ -4,10 +4,6 @@ const connection = require("../MySQL/connection");
 // import user api
 const usersAPI = require("../controllers/users.controllers");
 
-// import sequelize User
-const { users } = require("../models");
-const User = users;
-
 // Gets all Users
 // #TODO add categories arr
 router.get("/", usersAPI.findAll);
@@ -26,6 +22,17 @@ router.put("/:id", usersAPI.delete);
 // Delete Member
 // TODO not working
 router.delete("/:id", usersAPI.delete);
+
+
+
+
+
+
+
+
+
+
+
 
 //  Login
 // #TODO add the function to actually login the user to the site
