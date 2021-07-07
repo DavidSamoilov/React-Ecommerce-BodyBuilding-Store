@@ -32,7 +32,6 @@ exports.create = (req, res) => {
     });
 };
   
-};
 
 // Retrieve all users from the database.
 exports.findAll = (req, res) => {
