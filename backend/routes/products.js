@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const connection = require("../MySQL/connection");
-const { Products, Images } = require("../models/");
+const { products, images } = require("../models/");
+const Products = products
 
 // Gets all Users
 router.get("/", async (req, res) => {
@@ -11,17 +12,14 @@ router.get("/", async (req, res) => {
     }).then((users) => {
       res.json(users);
     });
-
-
-    // Products.findAll().then((allProducts) => res.json(allProducts));
   } catch (err) {
     res.send(err);
   }
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    Products.findOne({ where: { id: req.params.id } }).then((product) =>
+    Products.findOne({ where: { id: req.params.id }, include: ["images", "product_categories"] }).then((product) =>
       res.json(product)
     );
   } catch (err) {

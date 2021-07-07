@@ -4,14 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
-const { Sequelize , sequelize} = require('sequelize');
-
-
-
-
-
-
-
 
 const port = 5000;
 var app = express();
@@ -36,7 +28,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -56,20 +47,5 @@ app.use(function (err, req, res, next) {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-
-// in your server file - e.g. app.js
-
-// const Project = sequelize.import("./models/init-models");
-
-// // The model definition is done in /path/to/models/project.js
-// module.exports = (sequelize, DataTypes) => {
-//   return sequelize.define('project', {
-//     name: DataTypes.STRING,
-//     description: DataTypes.TEXT
-//   });
-// };
-
-
 
 module.exports = app;

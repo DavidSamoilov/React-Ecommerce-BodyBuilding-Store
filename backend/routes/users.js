@@ -2,13 +2,14 @@ const express = require("express");
 const router = express.Router();
 const app = require("../app");
 const connection = require("../MySQL/connection");
-const { Users } = require("../models");
+const { users } = require("../models");
+const User = users
 
 // Gets all Users
 router
   .get("/", async (req, res) => {
     try {
-      Users.findAll().then((users) => res.json(users));
+      User.findAll().then((users) => res.json(users));
     } catch {
       res.send("500");
     }
