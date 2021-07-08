@@ -3,6 +3,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 
 /* utilities */
+:root{
+  --max-width: 1170px;
+
+}
 
 html {
   scroll-padding: 50px;

@@ -4,47 +4,57 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { NavDropdown } from "react-bootstrap";
 import { Form, Button, FormControl } from "react-bootstrap";
+import CartButtons from './CardButtons'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-import { FaBars } from "react-icons/fa";
+import logo from '../assets/favicon.svg'
+import { FaBars } from 'react-icons/fa'
+import { links } from "../utils/constants";
 
 const Navigation = () => {
-  return (
+  return(
     <NavContainer>
-      <div className="nav-center">
-        <div className="nav-header">
-          <Link to="/">
-            <img src="" alt="LOGO" srcset="" />
+      <div className='nav-center'>
+        <div className='nav-header'>
+          <Link to='/'>
+            <img src="https://i.pinimg.com/736x/0f/8a/78/0f8a7847f053d3b12aa7a5f4e63a285f.jpg" alt='DavesGym logo' />
           </Link>
-          <button type="button" className='nav-toggle'>
+          <button type='button' className='nav-toggle'>
             <FaBars />
           </button>
         </div>
-        
+        <ul className='nav-links'>
+          {links.map((link) => {
+            const { id, text, url } = link
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <CartButtons />
       </div>
     </NavContainer>
-  );
+  )
+
 };
 
-export default Navigation;
 
 const NavContainer = styled.nav`
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
   .nav-center {
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
   }
-
   .nav-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     img {
       width: 175px;
       margin-left: -15px;
@@ -53,7 +63,7 @@ const NavContainer = styled.nav`
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color: var(--clr-primary-5);
+    color:orange ; /* var(--clr-primary-5); */
     cursor: pointer;
     svg {
       font-size: 2rem;
@@ -66,7 +76,7 @@ const NavContainer = styled.nav`
     display: none;
   }
   @media (min-width: 992px) {
-    .nag-toggle {
+    .nav-toggle {
       display: none;
     }
     .nav-center {
@@ -77,17 +87,24 @@ const NavContainer = styled.nav`
     .nav-links {
       display: flex;
       justify-content: center;
+      li {
+        margin: 0 0.5rem;
+      }
+      a {
+        color:grey;  /* /var(--clr-grey-3); */
+        font-size: 1rem;
+        text-transform: capitalize;
+        letter-spacing: var(--spacing);
+        padding: 0.5rem;
+        &:hover {
+          border-bottom: 2px solid hsl(22, 31%, 67%);
+        }
+      }
     }
-    li {
-      margin: 0 0.5rem;
-    }
-    a{
-      color :grey;
-      font-size:1rem;
-      text-transform: capitalize;
-      letter-spacing: var(--spacing);
-      padding :0.5rem;
-
+    .cart-btn-wrapper {
+      display: grid;
     }
   }
-`;
+  `
+
+export default Navigation;
