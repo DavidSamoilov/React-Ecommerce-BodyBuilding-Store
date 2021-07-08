@@ -34,9 +34,9 @@ exports.create = (req, res) => {
 };
 
 // Retrieve all users from the database.
-exports.findAll = (req, res) => {
+exports.findAll = async (req, res) => {
   try {
-    User.findAll().then((users) => res.json(users));
+    await User.findAll().then((users) => res.json(users));
   } catch {
     res.send("500");
   }
