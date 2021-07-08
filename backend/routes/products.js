@@ -4,7 +4,7 @@ const connection = require("../MySQL/connection");
 const { products } = require("../models/");
 const Products = products
 
-// Gets all Users
+// Gets all Products
 router.get("/", async (req, res) => {
   try {
     Products.findAll({
