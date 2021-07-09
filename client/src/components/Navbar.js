@@ -7,7 +7,6 @@ import { Form, Button, FormControl } from "react-bootstrap";
 import CartButtons from './CardButtons'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from '../assets/favicon.svg'
 import { FaBars } from 'react-icons/fa'
 import { links } from "../utils/constants";
 
