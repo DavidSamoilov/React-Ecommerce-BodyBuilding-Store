@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaBars } from 'react-icons/fa'
 import { links } from "../utils/constants";
+import logo from "../assets/logo.svg"
 
 const Navigation = () => {
   return(
@@ -16,7 +17,7 @@ const Navigation = () => {
       <div className='nav-center'>
         <div className='nav-header'>
           <Link to='/'>
-            <img src="https://i.pinimg.com/736x/0f/8a/78/0f8a7847f053d3b12aa7a5f4e63a285f.jpg" alt='DavesGym logo' />
+            <img src={logo} alt='DavesGym logo' />
           </Link>
           <button type='button' className='nav-toggle'>
             <FaBars />
