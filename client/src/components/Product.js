@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const Product = ({id, images , name, price}) => {
     return (
-        <Wrapper>
-            <div className="container">
+      <Wrapper>
+      <div className='container'>
             <img src={images[images.length-1].image} alt={name} />
             <Link to={`/products/${id}`} className="link">
                 <FaSearch/>

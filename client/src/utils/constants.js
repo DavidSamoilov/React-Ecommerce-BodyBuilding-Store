@@ -12,7 +12,7 @@ export const links = [
         url: "/checkout"
     },
     {
-        id:2,
+        id:3,
         text:"Our Vision",
         url: "/vision"
     }
