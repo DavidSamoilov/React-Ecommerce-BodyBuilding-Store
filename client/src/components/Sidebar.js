@@ -5,20 +5,17 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
 import CardButtons from "./CardButtons";
-import { useProductsContext } from '../context/products_context'
-
-
+import { useProductsContext } from "../context/products_context";
 
 const Sidebar = () => {
-  const data = useProductsContext()
-  console.log(data);
-  const isOpen = true;
+  const { isSidebarOpen, closeSidebar } = useProductsContext()
+
   return (
     <SidebarContainer>
-      <aside className={`${isOpen ? "sidebar show-sidebar" : "sidebar"}`}>
+      <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}>
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="Davids gym" />
-          <button className="close-btn" type="button">
+          <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -26,12 +23,12 @@ const Sidebar = () => {
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>{text} </Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout">Checkout</Link>
+            <Link to="/checkout" onClick={closeSidebar}>Checkout</Link>
           </li>
         </ul>
         <CardButtons />
@@ -39,7 +36,8 @@ const Sidebar = () => {
     </SidebarContainer>
   );
 };
-const SidebarContainer = styled.div`text-align: center;
+const SidebarContainer = styled.div`
+  text-align: center;
   .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -105,6 +103,6 @@ const SidebarContainer = styled.div`text-align: center;
       display: none;
     }
   }
-`
+`;
 
 export default Sidebar;

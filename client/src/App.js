@@ -1,5 +1,10 @@
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
+
+// "react": "^17.0.2",
+// "react-dom": "^17.0.2",
+// "react-scripts": "4.0.3",
 
 import {
   Home,

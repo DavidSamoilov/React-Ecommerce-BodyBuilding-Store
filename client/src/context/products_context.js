@@ -65,8 +65,8 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     <ProductsContext.Provider
-    // , fetchSingleProduct
-    value={{ ...state, openSidebar, closeSidebar }}
+      // , fetchSingleProduct
+      value={{ ...state, openSidebar, closeSidebar }}
     >
       {children}
     </ProductsContext.Provider>
