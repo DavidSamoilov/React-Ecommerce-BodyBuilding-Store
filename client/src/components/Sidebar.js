@@ -5,8 +5,13 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
 import CardButtons from "./CardButtons";
+import { useProductsContext } from '../context/products_context'
+
+
 
 const Sidebar = () => {
+  const data = useProductsContext()
+  console.log(data);
   const isOpen = true;
   return (
     <SidebarContainer>

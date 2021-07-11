@@ -6,3 +6,5 @@ export const links = [
         url: "/products"
     }
 ]
+
+export const products_url = "http://localhost:5000/products/"

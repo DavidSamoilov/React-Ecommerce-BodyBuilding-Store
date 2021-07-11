@@ -1,17 +1,14 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import { NavDropdown } from "react-bootstrap";
-import { Form, Button, FormControl } from "react-bootstrap";
 import CartButtons from './CardButtons'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaBars } from 'react-icons/fa'
 import { links } from "../utils/constants";
 import logo from "../assets/logo.svg"
+import { useProductsContext } from '../context/products_context'
 
 const Navigation = () => {
+  const { openSidebar } = useProductsContext()
   return(
     <NavContainer>
       <div className='nav-center'>

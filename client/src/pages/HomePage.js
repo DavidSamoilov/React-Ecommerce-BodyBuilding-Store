@@ -1,8 +1,6 @@
 import React from "react";
 
-import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import { Col, Form, FormControl, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -275,5 +273,7 @@ const HomePage = () => {
     </div>
   );
 };
+
+const Wrapper = styled.div``
 
 export default HomePage;
