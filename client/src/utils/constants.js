@@ -5,6 +5,16 @@ export const links = [
         id:1,
         text:"Products",
         url: "/products"
+    },
+    {
+        id:2,
+        text:"Checkout",
+        url: "/checkout"
+    },
+    {
+        id:2,
+        text:"Our Vision",
+        url: "/vision"
     }
 ]
 
