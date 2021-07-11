@@ -1,4 +1,6 @@
 import React from "react";
+import { featured_products_ids as FEATURED_IDS} from "../utils/constants";
+
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -25,7 +27,7 @@ const products_reducer = (state, action) => {
   }
   if (action.type === GET_PRODUCTS_SUCCESS) {
     const featured_products = action.payload.filter((product) =>
-      [1, 2].includes(product.id)
+     FEATURED_IDS.includes(product.id)
     );
 
     return {

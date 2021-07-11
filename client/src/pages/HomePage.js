@@ -1,47 +1,18 @@
 import React from "react";
 
 import Container from "react-bootstrap/Container";
-import { Col, Form, FormControl, Row } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import styled from "styled-components";
+import FeaturedProducts from "../components/FeaturedProducts";
 
 const HomePage = () => {
-  axios.get("/products").then(res => {
-    console.log(res);
-    console.log(1);
-  })
+  
 
   return (
     <div>
-      {/* Landing page hero */}
-      <div className="hero">
-        <div className="image-text">
-          <div id="color-overlay">
-            <Container className="h-100">
-              <Row className="row h-100 align-items-center">
-                <Col className="col-12 text-center">
-                  <h1 className="display-2 opacity-one">This is DavesGym</h1>
-                  <p className="lead opacity-one">
-                    Optimize your training experience{" "}
-                  </p>
-                  <Button
-                    variant="secondary"
-                    href="#shop-header"
-                    className="mt-5"
-                    size="lg"
-                    active
-                  >
-                    View Our products{" "}
-                    <i className="fas fa-long-arrow-alt-down"></i>
-                  </Button>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </div>
-      </div>
+    {/* Feature products */}
+     <FeaturedProducts/>
       {/* ShopHeader Section */}
       <Container fluid id="shop-header" className="text-center ">
         <h2 className="align-items-center">Better Equipment, Faster Results</h2>
