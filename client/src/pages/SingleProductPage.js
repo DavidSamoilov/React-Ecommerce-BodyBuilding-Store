@@ -25,7 +25,6 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
-  console.log(product);
 
   useEffect(() => {
     if (product === null) {
@@ -44,7 +43,7 @@ const SingleProductPage = () => {
 
   //  #TODO add is item in stock to db
   //  #TODO add is item CATEGORIES to db
-  const categories = ["Clothing","Outwear"]
+  const categories = ["Clothing", "Outwear"];
   const stock = 500;
   const {
     name,
@@ -54,6 +53,7 @@ const SingleProductPage = () => {
     id: sku,
     images,
   } = product;
+  console.log("images1",images);
   return (
     <Wrapper>
       <PageHero title={name} product={name} />
@@ -62,7 +62,7 @@ const SingleProductPage = () => {
           back to products
         </Link>
         <div className="product-center">
-          <ProductImages />
+        <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
             <h5 className="price">{price}</h5>
@@ -71,16 +71,18 @@ const SingleProductPage = () => {
               <span>Available : </span>
               {stock > 0 ? "In stock" : "Out of stock"}
             </p>
+
             <p className="info">
               <span>Categories : </span>
-              <ul>
-
-              {categories.map((category)=><li>{category}</li>)}
-              </ul>
             </p>
+            <ul>
+              {categories.map((category, index) => (
+                <li key={index}>{category}</li>
+              ))}
+            </ul>
           </section>
-          <hr/>
-          {stock > 0 && <AddToCart/>}
+          <hr />
+          {stock > 0 && <AddToCart />}
         </div>
       </div>
     </Wrapper>
@@ -88,35 +90,35 @@ const SingleProductPage = () => {
 };
 
 const Wrapper = styled.main`
-    .product-center{
-        display:grid;
-        gap:4rem;
-        margin-top:2rem;
-    }
-    .price{
-        color: var(--clr-primary-5);
-    }
-    .desc {
+  .product-center {
+    display: grid;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  .price {
+    color: var(--clr-primary-5);
+  }
+  .desc {
     line-height: 2;
     max-width: 45em;
   }
-  .info{
-      text-transform: capitalize;
-      width: 300px;
-      display: grid;
-      grid-template-columns: 125px 1fr;
-      span{
-          font-weight: 700;
-      }
+  .info {
+    text-transform: capitalize;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    span {
+      font-weight: 700;
+    }
   }
-  @media (min-width: 992px){
-      .product-center{
-          grid-template-columns: 1fr 1fr;
-          align-items: center;
-      }
-      .price{
-          font-size: 1.25rem;
-      }
+  @media (min-width: 992px) {
+    .product-center {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .price {
+      font-size: 1.25rem;
+    }
   }
 `;
 
