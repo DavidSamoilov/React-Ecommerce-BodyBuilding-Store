@@ -1,4 +1,3 @@
-import React from "react";
 import { featured_products_ids as FEATURED_IDS } from "../utils/constants";
 
 import {

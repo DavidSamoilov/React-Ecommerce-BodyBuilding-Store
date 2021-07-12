@@ -53,7 +53,7 @@ const SingleProductPage = () => {
     id: sku,
     images,
   } = product;
-  console.log("images1",images);
+  console.log("images1", images);
   return (
     <Wrapper>
       <PageHero title={name} product={name} />
@@ -62,10 +62,10 @@ const SingleProductPage = () => {
           back to products
         </Link>
         <div className="product-center">
-        <ProductImages images={images} />
+          <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <h5 className="price">{price}</h5>
+            <h5 className="price">{price}$</h5>
             <p className="desc">{long_description}</p>
             <p className="info">
               <span>Available : </span>

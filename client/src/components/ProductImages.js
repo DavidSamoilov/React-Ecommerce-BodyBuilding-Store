@@ -5,7 +5,7 @@ const ProductImages = ({ images = [{ image: "" }] }) => {
   const [main, setMain] = useState(images[0]);
   return (
     <Wrapper>
-      <img src={main.image} alt="main product image" className="main" />
+      <img src={main.image} alt="main product" className="main" />
       <div className="gallery">
         {images.map((image, index) => {
           return (
@@ -13,7 +13,7 @@ const ProductImages = ({ images = [{ image: "" }] }) => {
               key={index}
               src={image.image}
               onClick={() => setMain(images[index])}
-              alt="more product images"
+              alt="more product"
               className={image.image === main.image ? "active" : null}
             />
           );
