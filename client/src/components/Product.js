@@ -4,27 +4,23 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Product = ({id, images , name, price}) => {
-    return (
-      <Wrapper>
-      <div className='container'>
-            <img src={images[images.length-1].image} alt={name} />
-            <Link to={`/products/${id}`} className="link">
-                <FaSearch/>
-            </Link>
-            </div>
-            <footer>
-                <h5>{name}</h5>
-                <p>{price}$</p>
-            </footer>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <div className=''>
+        <img src={images[0].image} alt={name} />
+        <Link to={`/products/${id}`} className='link'>
+          <FaSearch />
+        </Link>
+      </div>
+      <footer>
+        <h5>{name}</h5>
+        <p>{price}$</p>
+      </footer>
+    </Wrapper>
+  )
 }
 const Wrapper = styled.article`
-.container {
-    position: relative;
-    background: var(--clr-black);
-    border-radius: var(--radius);
-  }
+
   img {
     width: 100%;
     display: block;
@@ -73,6 +69,5 @@ const Wrapper = styled.article`
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-
 `
 export default Product
