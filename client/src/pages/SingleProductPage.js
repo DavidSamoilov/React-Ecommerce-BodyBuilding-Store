@@ -43,7 +43,7 @@ const SingleProductPage = () => {
 
   //  #TODO add is item in stock to db
   //  #TODO add is item CATEGORIES to db
-  const categories = ["Clothing", "Outwear"];
+  const categories = ["Clothing", "Shoes"];
   const stock = 500;
   const {
     name,
@@ -71,18 +71,16 @@ const SingleProductPage = () => {
               <span>Available : </span>
               {stock > 0 ? "In stock" : "Out of stock"}
             </p>
-
             <p className="info">
               <span>Categories : </span>
+              {categories.join(" ")}
+          
             </p>
-            <ul>
-              {categories.map((category, index) => (
-                <li key={index}>{category}</li>
-              ))}
-            </ul>
-          </section>
+            
+            
           <hr />
-          {stock > 0 && <AddToCart />}
+          {stock > 0 && <AddToCart product={product}/>}
+          </section>
         </div>
       </div>
     </Wrapper>
