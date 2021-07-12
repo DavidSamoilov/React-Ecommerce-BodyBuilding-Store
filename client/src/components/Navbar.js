@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaBars } from 'react-icons/fa'
 import { links } from "../utils/constants";
-import logo from "../assets/logo.svg"
+import logo from "../assets/logo.jpg"
 import { useProductsContext } from '../context/products_context'
 
 const Navigation = () => {
@@ -12,7 +12,7 @@ const Navigation = () => {
   return(
     <NavContainer>
       <div className='nav-center'>
-        <div className='nav-header'>
+      <div className='nav-header'>
           <Link to='/'>
             <img src={logo} alt='DavesGym logo' />
           </Link>
@@ -53,6 +53,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
+      height: 5rem;
       width: 175px;
       margin-left: -15px;
     }
@@ -60,7 +61,7 @@ const NavContainer = styled.nav`
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color:orange ; /* var(--clr-primary-5); */
+    color:var(--clr-primary-5);
     cursor: pointer;
     svg {
       font-size: 2rem;

@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Product = ({id, images , name, price}) => {
+const Product = ({id, images=[{}] , name, price}) => {
   return (
     <Wrapper className=''>
       <div className='container'>

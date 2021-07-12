@@ -58,6 +58,6 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
   }
-`;
+`
 
 export default FeaturedProducts;
