@@ -5,11 +5,13 @@ import styled from 'styled-components'
 
 const Product = ({id, images , name, price}) => {
   return (
-    <Wrapper>
-      <div className=''>
+    <Wrapper className=''>
+      <div className='container'>
+        <Link to={`/products/${id}`}>
         <img src={images[0].image} alt={name} />
-        <Link to={`/products/${id}`} className='link'>
+        <span className='link'>
           <FaSearch />
+        </span>
         </Link>
       </div>
       <footer>
@@ -20,6 +22,10 @@ const Product = ({id, images , name, price}) => {
   )
 }
 const Wrapper = styled.article`
+.container {
+    position: relative;
+    border-radius: var(--radius);
+  }
 
   img {
     width: 100%;
