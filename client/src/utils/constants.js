@@ -18,5 +18,5 @@ export const links = [
     }
 ]
 
-export const products_url = "http://localhost:5000/products/"
+export const products_url = "http://localhost:5000/products/";
 
