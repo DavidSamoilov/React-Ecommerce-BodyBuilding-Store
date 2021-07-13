@@ -15,7 +15,7 @@ const CardButtons = () => {
         </span>
       </Link>
       <Link to="/login">
-      <button type="button" className="auth-btn">
+      <button type="button" onClick={closeSidebar} className="auth-btn">
           Login <FaUserPlus/>
       </button>
       </Link>

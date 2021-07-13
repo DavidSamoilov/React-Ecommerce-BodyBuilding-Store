@@ -69,6 +69,7 @@ const NavContainer = styled.nav`
   }
   .nav-links {
     display: none;
+    height: 5px;
   }
   .cart-btn-wrapper {
     display: none;
