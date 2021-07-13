@@ -111,16 +111,13 @@ exports.login =  (req, res) => {
   User.findOne({where:{email,password}})
     .then(data => {
       if(!data){
-        res.send(false);
+        res.send({ message: "Wrong username/password combination!" });
       }else{
-
+        res.send(data);
       }
-      res.send(data);
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving Tutorial with email=" + email
-      });
+      res.send({ err: err });
     });
 }
 // Find all published users
