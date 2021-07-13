@@ -14,9 +14,11 @@ const CardButtons = () => {
           <span className="cart-value">12</span>
         </span>
       </Link>
+      <Link to="/login">
       <button type="button" className="auth-btn">
           Login <FaUserPlus/>
       </button>
+      </Link>
     </Wrapper>
   );
 };

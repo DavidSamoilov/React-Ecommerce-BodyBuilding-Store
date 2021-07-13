@@ -24,30 +24,8 @@ router.put("/:id", usersAPI.delete);
 router.delete("/:id", usersAPI.delete);
 
 
-
-
-
-
-
-
-
-
-
-
 //  Login
 // #TODO add the function to actually login the user to the site
-router.post("/login", (req, res) => {
-  if (!req.body) return res.status(500).send("Can't be empty");
-  connection.query(
-    "SELECT * FROM users WHERE email = ? AND password = ?",
-    [req.body.email, req.body.password],
-    function (err, results, fields) {
-      if (err) throw err;
-      if (results == []) return res.send("Incorrect email or password");
-
-      res.json(results); // results contains rows returned by server
-    }
-  );
-});
+router.post("/login", usersAPI.login)
 
 module.exports = router;

@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import styled from "styled-components";
+import {LoginForm} from "../components"
 const LoginRegisterPage = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (<Wrapper>
+         <LoginForm/>
+  </Wrapper>);
+};
 
-export default LoginRegisterPage
+const Wrapper = styled.main`
+`
+export default LoginRegisterPage;

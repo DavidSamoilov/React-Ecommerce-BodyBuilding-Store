@@ -106,5 +106,22 @@ exports.delete = (req, res) => {
 
 };
 
+exports.login =  (req, res) => {
+  const {email,password} = req.body;
+  User.findOne({where:{email,password}})
+    .then(data => {
+      if(!data){
+        res.send(false);
+      }else{
+
+      }
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Tutorial with email=" + email
+      });
+    });
+}
 // Find all published users
-exports.findAllPublished = (req, res) => {};
+// exports.findAllPublished = (req, res) => {};

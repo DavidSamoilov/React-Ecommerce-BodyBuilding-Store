@@ -6,7 +6,7 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(database, user, password, {
   host,
   dialect:"mysql",
-  operatorsAliases: false,
+  operatorsAliases: 0,
   pool 
 });
 

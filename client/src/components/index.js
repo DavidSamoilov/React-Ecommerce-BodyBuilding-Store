@@ -13,6 +13,7 @@ import AddToCart from "./AddToCart";
 import Filters from "./Filters";
 import Sort from "./Sort";
 import ProductList from "./ProductList";
+import LoginForm from "./LoginForm"
 export {
 ProductList,
   Sort,
@@ -28,4 +29,5 @@ ProductList,
   FeaturedProducts,
   Loading,
   Product,
+  LoginForm,
 };
