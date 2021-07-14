@@ -15,6 +15,7 @@ import Sort from "./Sort";
 import ProductList from "./ProductList";
 import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
+import AddProduct from "./AddProduct";
 export {
 ProductList,
   Sort,
@@ -32,4 +33,5 @@ ProductList,
   Product,
   LoginForm,
   RegisterForm,
+  AddProduct,
 };

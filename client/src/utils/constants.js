@@ -15,6 +15,11 @@ export const links = [
         id:3,
         text:"Our Vision",
         url: "/vision"
+    },
+    {
+        id:4,
+        text:"Admin Dashboard",
+        url:"/admin"
     }
 ]
 

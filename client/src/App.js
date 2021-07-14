@@ -15,7 +15,8 @@ import {
   About,
   Products,
   PrivateRoute,
-  LoginRegister
+  LoginRegister,
+  Admin
 } from "./pages";
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route exact path="/login">
           <LoginRegister/>
+        </Route>
+        <Route exact path="/admin">
+          <Admin/>
         </Route>
         <Route exact path="/products/:id" children={<SingleProduct />} />
         <Route exact path="/checkout">
