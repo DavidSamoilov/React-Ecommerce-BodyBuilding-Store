@@ -1,19 +1,16 @@
 import React from "react";
 
-import FeaturedProducts from "../components/FeaturedProducts";
+import { FeaturedProducts, TopCategories } from "../components/";
 
 const HomePage = () => {
-  
-
   return (
     <main>
-    {/* Feature products */}
-     <FeaturedProducts/>
+      {/* Feature products */}
+      <FeaturedProducts />
       {/* ShopHeader Section */}
-      
+      {/* <TopCategories /> */}
     </main>
   );
 };
-
 
 export default HomePage;
