@@ -14,6 +14,7 @@ import Filters from "./Filters";
 import Sort from "./Sort";
 import ProductList from "./ProductList";
 import LoginForm from "./LoginForm"
+import RegisterForm from "./RegisterForm"
 export {
 ProductList,
   Sort,
@@ -30,4 +31,5 @@ ProductList,
   Loading,
   Product,
   LoginForm,
+  RegisterForm,
 };

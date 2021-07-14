@@ -1,26 +1,18 @@
 import Axios from "axios";
 import React, { useEffect, useState } from 'react'
 import styled from "styled-components";
+import RegisterForm from "./RegisterForm";
 
 
 const LoginForm = () => {
-  const [emailReg, setEmailReg] = useState("");
-  const [passwordReg, setPasswordReg] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
   const [loginStatus, setLoginStatus] = useState("");
    
 
-  const register = () => {
-    return 0
-    Axios.post("http://localhost:5000/users/register",{withCredentials: true}, {
-      email: emailReg,
-      password: passwordReg,
-    }).then((response) => {
-      console.log(response);
-    });
-  };
+
 
   const login = () => {
     Axios.post("http://localhost:5000/users/login", {
@@ -47,25 +39,8 @@ const LoginForm = () => {
 
   return (
     <Wrapper className="App">
-      <div className="registration">
-        <h1>Registration</h1>
-        <label>Email</label>
-        <input
-          type="text"
-          onChange={(e) => {
-            setEmailReg(e.target.value);
-          }}
-        />
-        <label>Password</label>
-        <input
-          type="text"
-          onChange={(e) => {
-            setPasswordReg(e.target.value);
-          }}
-        />
-        <button onClick={register}> Register </button>
-      </div>
-
+      
+      <RegisterForm/>
       <div className="login">
         <h1>Login</h1>
         <input
