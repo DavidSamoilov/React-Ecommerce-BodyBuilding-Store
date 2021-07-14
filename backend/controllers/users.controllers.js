@@ -4,6 +4,7 @@ const User = db.users;
 
 // Create and Save a new user
 exports.create = (req, res) => {
+  // add user with sequelize
   const post = req.body;
   const { first_name, email, password } = post;
   // Validate request
