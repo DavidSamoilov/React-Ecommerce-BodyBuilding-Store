@@ -39,9 +39,7 @@ const LoginForm = () => {
 
   return (
     <Wrapper className="App">
-      
-      <RegisterForm/>
-      <div className="login">
+            <div className="login">
         <h1>Login</h1>
         <input
           type="text"

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {LoginForm} from "../components"
+import {LoginForm, RegisterForm} from "../components"
 const LoginRegisterPage = () => {
   return (<Wrapper>
+      <RegisterForm/>
          <LoginForm/>
   </Wrapper>);
 };

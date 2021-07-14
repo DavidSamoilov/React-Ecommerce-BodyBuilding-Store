@@ -7,6 +7,8 @@ import styled from "styled-components";
 const RegisterForm = () => {
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
+    const [passwordReg2, setPasswordReg2] = useState("");
+    const [firstNameReg, setFirstNameReg] = useState("");
     const register = () => {
         return 0
         Axios.post("http://localhost:5000/users/register",{withCredentials: true}, {
@@ -34,6 +36,20 @@ const RegisterForm = () => {
           type="text"
           onChange={(e) => {
             setPasswordReg(e.target.value);
+          }}
+        />
+        <label>Repeat Password</label>
+        <input
+          type="text"
+          onChange={(e) => {
+            setPassword2Reg(e.target.value);
+          }}
+        />
+        <label>First Name</label>
+        <input
+          type="text"
+          onChange={(e) => {
+            setFirstNameReg(e.target.value);
           }}
         />
         <button onClick={register}> Register </button>
