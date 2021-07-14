@@ -23,7 +23,6 @@ router.put("/:id", usersAPI.delete);
 // TODO not working
 router.delete("/:id", usersAPI.delete);
 
-
 //  Login
 // #TODO add the function to actually login the user to the site
 router.post("/login", usersAPI.login)

@@ -7,7 +7,7 @@ import styled from "styled-components";
 const RegisterForm = () => {
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-    const [passwordReg2, setPasswordReg2] = useState("");
+    const [password2Reg, setPassword2Reg] = useState("");
     const [firstNameReg, setFirstNameReg] = useState("");
     const register = () => {
         return 0
