@@ -17,6 +17,7 @@ import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
 import AddProduct from "./AddProduct";
 import TopCategories from "./TopCategories";
+import CartContent from "./CartContent"
 export {
 ProductList,
   Sort,
@@ -35,5 +36,6 @@ ProductList,
   LoginForm,
   RegisterForm,
   AddProduct,
-  TopCategories
+  TopCategories,
+  CartContent,
 };

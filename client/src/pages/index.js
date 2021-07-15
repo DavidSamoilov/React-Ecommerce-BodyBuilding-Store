@@ -7,7 +7,7 @@ import Cart from "./CartPage";
 import Error from "./ErrorPage";
 import Checkout from "./CheckoutPage";
 import PrivateRoute from "./PrivatePage";
-import Admin from "./AdminPage"
+import Admin from "./AdminPage";
 export {
   Home,
   LoginRegister,
