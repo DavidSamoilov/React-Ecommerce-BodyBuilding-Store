@@ -18,6 +18,9 @@ import RegisterForm from "./RegisterForm"
 import AddProduct from "./AddProduct";
 import TopCategories from "./TopCategories";
 import CartContent from "./CartContent"
+import CartColumns from "./CartColumns"
+import CartItem from "./CartItem"
+import CartTotals from "./CartTotals"
 export {
 ProductList,
   Sort,
@@ -38,4 +41,5 @@ ProductList,
   AddProduct,
   TopCategories,
   CartContent,
+  CartColumns
 };
