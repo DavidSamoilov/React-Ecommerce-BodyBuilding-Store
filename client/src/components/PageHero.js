@@ -15,19 +15,18 @@ const PageHero = ({ title, product }) => {
 }
 
 const Wrapper = styled.section`
-  background: black;
   background-color: #000000;
-background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+background-image: linear-gradient(315deg, #b82e1f 0%, #000000 74%);
 
   width: 100%;
   min-height: 10vh;
   display: flex;
   align-items: center;
-  /* color: var(--clr-primary-1); */
-  color: #532020;
+  color: var(--clr-primary-5);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
   a {
-    /* color: var(--clr-primary-3); */
-    color: black;
+    color: var(--clr-primary-4);
     padding: 0.5rem;
     transition: var(--transition);
   }
