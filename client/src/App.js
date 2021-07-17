@@ -1,7 +1,8 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
+import { useAuthContext } from "./context/AuthApi";
 
 // "react": "^17.0.2",
 // "react-dom": "^17.0.2",
@@ -17,10 +18,23 @@ import {
   Products,
   PrivateRoute,
   LoginRegister,
-  Admin
+  Admin,
 } from "./pages";
+const Cookies = require("js-cookie");
+
 
 function App() {
+  const {auth,setAuth} = useAuthContext()
+  
+  const readCookie = () => {
+    const user = Cookies.get("userCookie");
+    if (user) {
+      setAuth(true);
+    }
+  };
+  useEffect(() => {
+    readCookie();
+  }, []);
   return (
     <Router>
       <Navbar />
@@ -39,10 +53,10 @@ function App() {
           <Products />
         </Route>
         <Route exact path="/login">
-          <LoginRegister/>
+          <LoginRegister />
         </Route>
         <Route exact path="/admin">
-          <Admin/>
+          <Admin />
         </Route>
         <Route exact path="/products/:id" children={<SingleProduct />} />
         <Route exact path="/checkout">

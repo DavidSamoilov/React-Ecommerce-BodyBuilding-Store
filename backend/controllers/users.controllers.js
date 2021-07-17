@@ -114,7 +114,7 @@ exports.login =  (req, res) => {
       if(!data){
         res.send({ message: "Wrong username/password combination!" });
       }else{
-        res.cookie("userCookie",data,
+        res.cookie("userCookie",JSON.stringify(data),
         // {httpOnly:true}
         )
         res.send(data);
