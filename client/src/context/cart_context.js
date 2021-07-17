@@ -8,14 +8,14 @@ import {
   CLEAR_CART,
   COUNT_CART_TOTALS,
 } from "../actions";
-const getLocalStorage = () =>{
-  let cart = localStorage.getItem('cart')
-  if(cart){
-    return JSON.parse(localStorage.getItem('cart'))
-  }else{
-    return []
+const getLocalStorage = () => {
+  let cart = localStorage.getItem("cart");
+  if (cart) {
+    return JSON.parse(localStorage.getItem("cart"));
+  } else {
+    return [];
   }
-}
+};
 const initialState = {
   cart: getLocalStorage(),
   total_items: 0,
@@ -28,27 +28,27 @@ export const CartProvider = ({ children }) => {
 
   //   add to cart
   const addToCart = (id, amount, product) => {
-    dispatch({ type: ADD_TO_CART, payload: { id, amount,product } });
+    dispatch({ type: ADD_TO_CART, payload: { id, amount, product } });
   };
 
   // remove item
   const removeItem = (id) => {
-
-  }
-  const toggleAmount = (id,value) => {
-
-  }
-  const clearCart = () => {}
-
+    dispatch({ type: REMOVE_CART_ITEM, payload: id });
+  };
+  const toggleAmount = (id, value) => {};
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
 
   // local storage
-  useEffect(()=>{
-    localStorage.setItem('cart',JSON.stringify(state.cart))
-
-  },[state.cart])
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   return (
-    <CartContext.Provider value={{ ...state, addToCart ,removeItem,clearCart,toggleAmount}}>
+    <CartContext.Provider
+      value={{ ...state, addToCart, removeItem, clearCart, toggleAmount }}
+    >
       {children}
     </CartContext.Provider>
   );

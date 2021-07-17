@@ -35,7 +35,11 @@ const cart_reducer = (state, action) => {
       return { ...state, cart: [...state.cart, newItem] };
     }
   }
-  return state;
+
+  if(action.type === REMOVE_CART_ITEM){
+    const tempCart = state.cart.filter((item) => item.id !== action.payload)
+    return {...state , cart :tempCart}
+  }
   throw new Error(`No matching ${action.type} action`);
 };
 
