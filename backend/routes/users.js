@@ -7,6 +7,9 @@ const usersAPI = require("../controllers/users.controllers");
 // Gets all Users
 // #TODO add categories arr
 router.get("/", usersAPI.findAll);
+//  Login
+// #TODO add the function to actually login the user to the site
+router.post("/login", usersAPI.login)
 
 // REGISTER
 router.post("/", usersAPI.create);
@@ -23,8 +26,5 @@ router.put("/:id", usersAPI.delete);
 // TODO not working
 router.delete("/:id", usersAPI.delete);
 
-//  Login
-// #TODO add the function to actually login the user to the site
-router.post("/login", usersAPI.login)
 
 module.exports = router;

@@ -1,4 +1,5 @@
 // const Op = db.Sequelize.Op;
+const { response } = require("express");
 const db = require("../models");
 const User = db.users;
 
@@ -113,6 +114,9 @@ exports.login =  (req, res) => {
       if(!data){
         res.send({ message: "Wrong username/password combination!" });
       }else{
+        res.cookie("userCookie",data,
+        // {httpOnly:true}
+        )
         res.send(data);
       }
     })
