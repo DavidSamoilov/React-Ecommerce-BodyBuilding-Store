@@ -1,36 +1,27 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useAuthContext } from "../context/AuthApi";
 import RegisterForm from "./RegisterForm";
+const config = { headers: {'Content-Type' : 'application/json','Access-Control-Allow-Origin': 'http://localhost:5000'},withCredentials: true}
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [loginStatus, setLoginStatus] = useState("");
+  const { auth, setAuth } = useAuthContext();
 
   const login = () => {
     Axios.post("http://localhost:5000/users/login", {
       email: email,
       password: password,
     },{withCredentials: true}).then((response) => {
-      if (response.data.message) {
-        setLoginStatus(response.data.message);
-      } else {
-        setLoginStatus(response.data.email);
-      }
+      setAuth(true)
+      console.log("good");
+    
+      
     });
   };
 
-  // useEffect(() => {
-  //   return 0
-
-  //   Axios.get("http://localhost:5000/users/login",{withCredentials: true}).then((response) => {
-  //     if (response.data.loggedIn == true) {
-  //       setLoginStatus(response.data.user[0].username);
-  //     }
-  //   });
-  // }, []);
 
   return (
     <Wrapper className="App">
@@ -53,7 +44,6 @@ const LoginForm = () => {
         <button onClick={login}> Login </button>
       </div>
 
-      <h1>{loginStatus}</h1>
     </Wrapper>
   );
 };

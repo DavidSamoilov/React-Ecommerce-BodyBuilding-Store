@@ -22,7 +22,7 @@ exports.create = (req, res) => {
     first_name,
   };
 
-  // Save Tutorial in the database
+  // Save user in the database
   User.create(user)
     .then((data) => {
       res.send(data);

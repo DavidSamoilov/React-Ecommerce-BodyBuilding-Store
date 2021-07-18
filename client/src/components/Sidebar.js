@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../assets/logo.jpg";
 import { links } from "../utils/constants";
-import CardButtons from "./CardButtons";
+import CartButtons from "./CartButtons";
 import { useProductsContext } from "../context/products_context";
 
 const Sidebar = () => {
@@ -31,7 +31,7 @@ const Sidebar = () => {
             <Link to="/checkout" onClick={closeSidebar}>Checkout</Link>
           </li>
         </ul>
-        <CardButtons />
+        <CartButtons />
       </aside>
     </SidebarContainer>
   );

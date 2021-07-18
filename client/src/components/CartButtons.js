@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { useProductsContext } from "../context/products_context";
-const CardButtons = () => {
+import { useAuthContext } from "../context/AuthApi";
+const Cookies = require("js-cookie");
+const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { total_items } = useCartContext();
+  const {auth,logout} = useAuthContext()
   return (
+
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
@@ -16,11 +20,17 @@ const CardButtons = () => {
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
-      <Link to="/login">
+        {auth?(<button type="button" onClick={closeSidebar,logout} className="auth-btn">
+        {Cookies.getJSON("userCookie").first_name} Logout<FaUserPlus />
+        </button>):
+              (<Link to="/login">
         <button type="button" onClick={closeSidebar} className="auth-btn">
           Login <FaUserPlus />
         </button>
-      </Link>
+        </Link>)
+
+        }
+        
     </Wrapper>
   );
 };
@@ -78,4 +88,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default CardButtons;
+export default CartButtons;

@@ -1,5 +1,5 @@
 import React from "react";
-import CartButtons from './CardButtons'
+import CartButtons from './CartButtons'
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaBars } from 'react-icons/fa'

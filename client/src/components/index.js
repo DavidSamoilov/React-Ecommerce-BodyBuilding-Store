@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import PageHero from "./PageHero";
-import CardButtons from "./CardButtons";
+import CartButtons from "./CartButtons";
 import Error from "./Error";
 import FeaturedProducts from "./FeaturedProducts";
 import Loading from "./Loading";
@@ -31,7 +31,7 @@ ProductList,
   Footer,
   Sidebar,
   PageHero,
-  CardButtons,
+  CartButtons,
   Error,
   FeaturedProducts,
   Loading,

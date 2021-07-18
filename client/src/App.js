@@ -3,11 +3,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import { useAuthContext } from "./context/AuthApi";
-
-// "react": "^17.0.2",
-// "react-dom": "^17.0.2",
-// "react-scripts": "4.0.3",
-
 import {
   Home,
   SingleProduct,
@@ -22,15 +17,17 @@ import {
 } from "./pages";
 const Cookies = require("js-cookie");
 
-
 function App() {
-  const {auth,setAuth} = useAuthContext()
-  
+  const { auth, setAuth } = useAuthContext();
   const readCookie = () => {
-    const user = Cookies.get("userCookie");
-    if (user) {
-      setAuth(true);
+    const user = Cookies.getJSON("userCookie");
+    console.log(user);
+    if(user){
+      if (user.length > 1) {
+        setAuth(true);
+      }
     }
+   
   };
   useEffect(() => {
     readCookie();

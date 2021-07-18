@@ -7,7 +7,7 @@ const port = 5000;
 var app = express();
 const cors = require("cors");
 
-app.use(cors({credentials:true,origin:'http://localhost:3000'}))
+app.use(cors({ credentials:true,origin:'http://localhost:3000'}))
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
