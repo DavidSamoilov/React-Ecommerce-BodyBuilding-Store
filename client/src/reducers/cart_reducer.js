@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,
@@ -29,6 +28,7 @@ const cart_reducer = (state, action) => {
         amount,
         image: product.images[0].image,
         price: product.price,
+        short_description:product.short_description
         // this will be added to check max stock
         // max: product.stock
       };

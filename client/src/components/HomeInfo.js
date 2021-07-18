@@ -4,9 +4,9 @@ import styled from "styled-components";
 const HomeInfo = () => {
   return (
     <Wrapper>
-      <div class="seo-block">
+      <div className="seo-block">
         <h1>More than your best workout clothing</h1>
-        <div class="seo-block__content">
+        <div className="seo-block__content">
           <p>
             The GymBug community is devoted to unlocking potential through
             conditioning and the things we do today to prepare for tomorrow.

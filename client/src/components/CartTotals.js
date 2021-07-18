@@ -4,7 +4,7 @@ import { useCartContext } from '../context/cart_context'
 import { Link } from 'react-router-dom'
 
 const CartTotals = () => {
-  const { total_amount, shipping_fee } = useCartContext()
+  const { total_amount } = useCartContext()
 
   return (
     <Wrapper>
