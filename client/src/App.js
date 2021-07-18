@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import { useAuthContext } from "./context/AuthApi";
 import {
@@ -16,14 +16,13 @@ import {
   Admin,
 } from "./pages";
 const Cookies = require("js-cookie");
-
 function App() {
   const { auth, setAuth } = useAuthContext();
   const readCookie = () => {
     const user = Cookies.getJSON("userCookie");
     console.log(user);
     if(user){
-      if (user.length > 1) {
+      if (user.id) {
         setAuth(true);
       }
     }

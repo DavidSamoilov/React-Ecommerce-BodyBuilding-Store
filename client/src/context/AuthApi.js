@@ -1,17 +1,14 @@
 import React, { useContext, useState } from "react";
-import {useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const Cookies = require("js-cookie");
 
 const AuthContext = React.createContext();
 export const AuthProvider = ({ children }) => {
   const history = useHistory();
   const [auth, setAuth] = useState(false);
-  const logout = () => {
-    Cookies.set("userCookie", []);
-    setAuth(false)
-  };
+
   return (
-    <AuthContext.Provider value={{ auth, setAuth,logout }}>
+    <AuthContext.Provider value={{ auth, setAuth }}>
       {children}
     </AuthContext.Provider>
   );

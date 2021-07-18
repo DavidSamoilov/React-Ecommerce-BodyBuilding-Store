@@ -1,15 +1,22 @@
 import React from "react";
 import { FaShoppingCart, FaUserPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { useProductsContext } from "../context/products_context";
 import { useAuthContext } from "../context/AuthApi";
 const Cookies = require("js-cookie");
+
 const CartButtons = () => {
+  const history = useHistory()
   const { closeSidebar } = useProductsContext();
   const { total_items } = useCartContext();
-  const {auth,logout} = useAuthContext()
+  const {auth,setAuth} = useAuthContext()
+  const logout = () => {
+    Cookies.set("userCookie", []);
+    setAuth(false)
+    history.push("./")
+  };
   return (
 
     <Wrapper className="cart-btn-wrapper">
@@ -20,9 +27,11 @@ const CartButtons = () => {
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
-        {auth?(<button type="button" onClick={closeSidebar,logout} className="auth-btn">
+        {auth?(
+        <button type="button" onClick={closeSidebar,logout} className="auth-btn">
         {Cookies.getJSON("userCookie").first_name} Logout<FaUserPlus />
-        </button>):
+        </button>
+        ):
               (<Link to="/login">
         <button type="button" onClick={closeSidebar} className="auth-btn">
           Login <FaUserPlus />

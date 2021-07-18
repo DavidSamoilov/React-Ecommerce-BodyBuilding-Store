@@ -1,27 +1,53 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useAuthContext } from "../context/AuthApi";
 import RegisterForm from "./RegisterForm";
-const config = { headers: {'Content-Type' : 'application/json','Access-Control-Allow-Origin': 'http://localhost:5000'},withCredentials: true}
+const config = {
+  headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "http://localhost:5000",
+  },
+  withCredentials: true,
+};
 
 const LoginForm = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { auth, setAuth } = useAuthContext();
 
   const login = () => {
-    Axios.post("http://localhost:5000/users/login", {
-      email: email,
-      password: password,
-    },{withCredentials: true}).then((response) => {
-      setAuth(true)
-      console.log("good");
-    
-      
+    Axios.post(
+      "http://localhost:5000/users/login",
+      {
+        email: email,
+        password: password,
+      },
+      config
+    ).then((response) => {
+      if (response.id) {
+        setAuth(true);
+      }
     });
   };
 
+  const loginAdmin = () => {
+    Axios.post(
+      "http://localhost:5000/users/login",
+      {
+        email: "dada7117@gmail.com",
+        password: "admin",
+      },
+      config
+    ).then((response) => {
+      console.log(response);
+      setAuth(true);
+      console.log("good");
+      history.push("/");
+    });
+  };
 
   return (
     <Wrapper className="App">
@@ -42,8 +68,8 @@ const LoginForm = () => {
           }}
         />
         <button onClick={login}> Login </button>
+        <button onClick={loginAdmin}> Login as admin </button>
       </div>
-
     </Wrapper>
   );
 };
