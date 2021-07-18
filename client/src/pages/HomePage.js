@@ -1,14 +1,15 @@
 import React from "react";
 
-import { FeaturedProducts, TopCategories } from "../components/";
+import {HomeInfo, FeaturedProducts, SalePromotion,HomeCategories } from "../components/";
 
 const HomePage = () => {
   return (
     <main>
-      {/* Feature products */}
       <FeaturedProducts />
       {/* ShopHeader Section */}
-      {/* <TopCategories /> */}
+      <SalePromotion />
+      <HomeCategories/>
+      <HomeInfo/>
     </main>
   );
 };

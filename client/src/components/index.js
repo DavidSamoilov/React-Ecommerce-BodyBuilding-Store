@@ -16,11 +16,13 @@ import ProductList from "./ProductList";
 import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
 import AddProduct from "./AddProduct";
-import TopCategories from "./TopCategories";
+import SalePromotion from "./SalePromotion";
 import CartContent from "./CartContent"
 import CartColumns from "./CartColumns"
 import CartItem from "./CartItem"
 import CartTotals from "./CartTotals"
+import HomeInfo from "./HomeInfo"
+import HomeCategories from "./HomeCategories";
 export {
 ProductList,
   Sort,
@@ -39,7 +41,9 @@ ProductList,
   LoginForm,
   RegisterForm,
   AddProduct,
-  TopCategories,
+  SalePromotion,
   CartContent,
-  CartColumns
+  CartColumns,
+  HomeInfo,
+  HomeCategories
 };
