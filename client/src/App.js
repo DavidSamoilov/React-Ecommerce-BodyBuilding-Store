@@ -1,6 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
+import React, { useEffect} from "react";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import { useAuthContext } from "./context/AuthApi";
 import {
@@ -17,7 +16,7 @@ import {
 } from "./pages";
 const Cookies = require("js-cookie");
 function App() {
-  const { auth, setAuth } = useAuthContext();
+  const { setAuth } = useAuthContext();
   const readCookie = () => {
     const user = Cookies.getJSON("userCookie");
     console.log(user);

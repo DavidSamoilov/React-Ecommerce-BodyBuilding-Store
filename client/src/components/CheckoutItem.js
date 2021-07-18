@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useCartContext } from "../context/cart_context";
-import { FaTrash } from "react-icons/fa";
-
-import AmountButtons from "./AmountButtons";
 const CheckoutItem = ({ id, image, name, amount, price ,short_description}) => {
 
   return (

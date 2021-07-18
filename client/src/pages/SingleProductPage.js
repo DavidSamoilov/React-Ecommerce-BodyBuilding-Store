@@ -7,7 +7,6 @@ import {
   Error,
   ProductImages,
   AddToCart,
-  Stars,
   PageHero,
 } from "../components";
 import styled from "styled-components";
@@ -48,9 +47,7 @@ const SingleProductPage = () => {
   const {
     name,
     price,
-    short_description,
     long_description,
-    id: sku,
     images,
   } = product;
   console.log("images1", images);

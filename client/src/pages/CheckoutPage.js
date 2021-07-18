@@ -16,7 +16,6 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import CartItem from "../components/CartItem";
 import CheckoutItem from "../components/CheckoutItem";
 
 const CheckoutPage = () => {

@@ -8,7 +8,7 @@ const HomeCategories = () => {
       <div className="categories-container">
         <div className="shopby-card">
           <div>
-            <img src="https://cdn.shopify.com/s/files/1/0898/4708/articles/Behind_Gymshark_s_Multi-Channel_Empire.png?v=1537916268"></img>
+            <img alt="category" src="https://cdn.shopify.com/s/files/1/0898/4708/articles/Behind_Gymshark_s_Multi-Channel_Empire.png?v=1537916268"></img>
           </div>
 
           <div className="shopby-content">
@@ -17,7 +17,7 @@ const HomeCategories = () => {
         </div>
         <div className="shopby-card">
           <div className="">
-            <img src="https://www.kindpng.com/picc/m/1-19728_whey-protein-food-supplement-hd-png-download.png"></img>
+            <img alt="category" src="https://www.kindpng.com/picc/m/1-19728_whey-protein-food-supplement-hd-png-download.png"></img>
           </div>
 
           <div className="shopby-content">
@@ -26,7 +26,7 @@ const HomeCategories = () => {
         </div>
         <div className="shopby-card">
           <div className="">
-            <img src="https://triathlonmagazine.ca/wp-content/uploads/2020/11/gettyimages-1079117394-170667a.jpg"></img>
+            <img alt="category" src="https://triathlonmagazine.ca/wp-content/uploads/2020/11/gettyimages-1079117394-170667a.jpg"></img>
           </div>
 
           <div className="shopby-content">

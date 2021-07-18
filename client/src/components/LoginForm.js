@@ -1,9 +1,8 @@
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useAuthContext } from "../context/AuthApi";
-import RegisterForm from "./RegisterForm";
 const config = {
   headers: {
     "Content-Type": "application/json",
@@ -16,7 +15,7 @@ const LoginForm = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { auth, setAuth } = useAuthContext();
+  const {setAuth } = useAuthContext();
 
   const login = () => {
     Axios.post(

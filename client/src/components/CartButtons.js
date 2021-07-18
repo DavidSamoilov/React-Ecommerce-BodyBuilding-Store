@@ -1,6 +1,6 @@
 import React from "react";
 import { FaShoppingCart, FaUserPlus } from "react-icons/fa";
-import { Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { useProductsContext } from "../context/products_context";
@@ -8,17 +8,16 @@ import { useAuthContext } from "../context/AuthApi";
 const Cookies = require("js-cookie");
 
 const CartButtons = () => {
-  const history = useHistory()
+  const history = useHistory();
   const { closeSidebar } = useProductsContext();
   const { total_items } = useCartContext();
-  const {auth,setAuth} = useAuthContext()
+  const { auth, setAuth } = useAuthContext();
   const logout = () => {
     Cookies.set("userCookie", []);
-    setAuth(false)
-    history.push("./")
+    setAuth(false);
+    history.push("./");
   };
   return (
-
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
@@ -27,19 +26,22 @@ const CartButtons = () => {
           <span className="cart-value">{total_items}</span>
         </span>
       </Link>
-        {auth?(
-        <button type="button" onClick={closeSidebar,logout} className="auth-btn">
-        {Cookies.getJSON("userCookie").first_name} Logout<FaUserPlus />
+      {auth ? (
+        <button
+          type="button"
+          onClick={(closeSidebar, logout)}
+          className="auth-btn"
+        >
+          {Cookies.getJSON("userCookie").first_name} Logout
+          <FaUserPlus />
         </button>
-        ):
-              (<Link to="/login">
-        <button type="button" onClick={closeSidebar} className="auth-btn">
-          Login <FaUserPlus />
-        </button>
-        </Link>)
-
-        }
-        
+      ) : (
+        <Link to="/login">
+          <button type="button" onClick={closeSidebar} className="auth-btn">
+            Login <FaUserPlus />
+          </button>
+        </Link>
+      )}
     </Wrapper>
   );
 };
