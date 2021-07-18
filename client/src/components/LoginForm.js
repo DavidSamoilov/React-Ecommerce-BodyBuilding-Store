@@ -51,7 +51,7 @@ const LoginForm = () => {
   return (
     <Wrapper className="App">
       <div className="login">
-        <h1>Login</h1>
+        <h3>Login</h3>
         <input
           type="text"
           placeholder="Email..."
@@ -66,24 +66,32 @@ const LoginForm = () => {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={login}> Login </button>
-        <button onClick={loginAdmin}> Login as admin </button>
+        <div className="login-btns">
+        <button className="btn" onClick={login}> Login </button>
+        <button className="btn" onClick={loginAdmin}> Login as admin </button>
+        </div>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main`
-  text-align: center;
+  padding:50px;
 
-  .registration,
-  .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.login{
+  height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+}
+.login-btns{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
+  
   input {
     width: 250px;
     height: 40px;
