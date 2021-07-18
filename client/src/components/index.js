@@ -23,6 +23,7 @@ import CartItem from "./CartItem"
 import CartTotals from "./CartTotals"
 import HomeInfo from "./HomeInfo"
 import HomeCategories from "./HomeCategories";
+import StripeCheckout from "./StripeCheckout"
 export {
 ProductList,
   Sort,
@@ -45,5 +46,6 @@ ProductList,
   CartContent,
   CartColumns,
   HomeInfo,
-  HomeCategories
+  HomeCategories,
+  StripeCheckout
 };
