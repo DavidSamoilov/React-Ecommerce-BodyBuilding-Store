@@ -5,14 +5,20 @@ import CheckoutItems from './Checkout/CheckoutItems'
 
 const CheckoutContent = () => {
     return (
-        <div>
+        <Wrapper>
             <CheckoutDetails/>
             <CheckoutItems/>
-        </div>
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.main`
+padding: 50px;
+background-color: rgb(243, 243, 243);
+display: flex;
+flex-direction: column;
+gap: 1rem;
+
 `
 
 export default CheckoutContent

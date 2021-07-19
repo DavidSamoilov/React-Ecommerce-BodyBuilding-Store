@@ -17,7 +17,8 @@ const CheckoutDetails = () => {
       </div>
       <div className="order-info">
         <h3>TOTAL:</h3>
-        <h3>340$</h3>
+        <h3>340 ₪
+</h3>
       </div>
       <div className="promo">
         <label htmlFor="promo">Promo Code</label>
