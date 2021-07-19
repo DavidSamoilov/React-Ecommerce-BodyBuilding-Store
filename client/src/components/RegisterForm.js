@@ -8,13 +8,13 @@ const RegisterForm = () => {
   const [password2Reg, setPassword2Reg] = useState("");
   const [firstNameReg, setFirstNameReg] = useState("");
   const register = () => {
-    return 0;
     Axios.post(
-      "http://localhost:5000/users/register",
+      "http://localhost:5000/users/",
       { withCredentials: true },
       {
         email: emailReg,
         password: passwordReg,
+        first_name: firstNameReg,
       }
     ).then((response) => {
       console.log(response);
@@ -29,6 +29,7 @@ const RegisterForm = () => {
         <input
           type="text"
           placeholder="Email"
+          value={emailReg}
           onChange={(e) => {
             setEmailReg(e.target.value);
           }}
@@ -37,6 +38,7 @@ const RegisterForm = () => {
         <input
           type="text"
           placeholder="Password"
+          value={passwordReg}
           onChange={(e) => {
             setPasswordReg(e.target.value);
           }}
@@ -45,6 +47,7 @@ const RegisterForm = () => {
         <input
           type="text"
           placeholder="Repeat Password"
+          value={password2Reg}
           onChange={(e) => {
             setPassword2Reg(e.target.value);
           }}
@@ -53,6 +56,7 @@ const RegisterForm = () => {
         <input
           type="text"
           placeholder="First Name"
+          value={firstNameReg}
           onChange={(e) => {
             setFirstNameReg(e.target.value);
           }}
