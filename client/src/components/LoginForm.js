@@ -15,7 +15,7 @@ const LoginForm = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setAuth } = useAuthContext();
+  const { setAuth } = useAuthContext();
 
   const login = () => {
     Axios.post(
@@ -67,8 +67,14 @@ const LoginForm = () => {
           }}
         />
         <div className="login-btns">
-        <button className="btn" onClick={login}> Login </button>
-        <button className="btn" onClick={loginAdmin}> Login as admin </button>
+          <button className="btn" onClick={login}>
+            {" "}
+            Login{" "}
+          </button>
+          <button className="btn" onClick={loginAdmin}>
+            {" "}
+            * Login as admin *{" "}
+          </button>
         </div>
       </div>
     </Wrapper>
@@ -76,26 +82,32 @@ const LoginForm = () => {
 };
 
 const Wrapper = styled.main`
-  padding:50px;
+  padding: 50px;
 
-.login{
-  height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-}
-.login-btns{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-  
-  input {
-    width: 250px;
-    height: 40px;
+  .login {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
+  input {
+    height: 40px;
+    width: 240px;
+    /* width: 100%; */
+  }
+  .login-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  @media (max-width:720px){
+    input{
+      width: 100%;
+    }
+}
+
 `;
 
 export default LoginForm;

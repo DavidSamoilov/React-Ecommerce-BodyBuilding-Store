@@ -1,28 +1,29 @@
 import Axios from "axios";
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-
-
 const RegisterForm = () => {
-    const [emailReg, setEmailReg] = useState("");
-    const [passwordReg, setPasswordReg] = useState("");
-    const [password2Reg, setPassword2Reg] = useState("");
-    const [firstNameReg, setFirstNameReg] = useState("");
-    const register = () => {
-        return 0
-        Axios.post("http://localhost:5000/users/register",{withCredentials: true}, {
-          email: emailReg,
-          password: passwordReg,
-        }).then((response) => {
-          console.log(response);
-        });
-      };
+  const [emailReg, setEmailReg] = useState("");
+  const [passwordReg, setPasswordReg] = useState("");
+  const [password2Reg, setPassword2Reg] = useState("");
+  const [firstNameReg, setFirstNameReg] = useState("");
+  const register = () => {
+    return 0;
+    Axios.post(
+      "http://localhost:5000/users/register",
+      { withCredentials: true },
+      {
+        email: emailReg,
+        password: passwordReg,
+      }
+    ).then((response) => {
+      console.log(response);
+    });
+  };
 
-
-    return (
-        <Wrapper>
-            <div className="registration">
+  return (
+    <Wrapper>
+      <div className="registration">
         <h3>Create an account</h3>
         {/* <label>Email</label> */}
         <input
@@ -52,45 +53,39 @@ const RegisterForm = () => {
         <input
           type="text"
           placeholder="First Name"
-
           onChange={(e) => {
             setFirstNameReg(e.target.value);
           }}
         />
-        <button className="btn" onClick={register}> Create Account </button>
+        <button className="btn" onClick={register}>
+          {" "}
+          Create Account{" "}
+        </button>
       </div>
-        </Wrapper>
-    )
-}
-
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.main`
   text-align: center;
-  background-color: rgb(243,243,243);
-  padding:50px;
-
-  padding:50px;
-
-.registration{
-  height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      gap: 2rem;
-}
-.login-btns{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-  
+  background-color: rgb(243, 243, 243);
+  padding: 50px;
   input {
-    width: 250px;
     height: 40px;
   }
-`
+  button,
+  input {
+    width: 100%;
+  }
 
+  .registration {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-export default RegisterForm
+    gap: 2rem;
+  }
+`;
+
+export default RegisterForm;
