@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { useCartContext } from "../../context/cart_context";
 
 const CheckoutDetails = () => {
-  const { cart } = useCartContext();
+  const { cart ,total_amount} = useCartContext();
+
   return (
     <Wrapper>
       <div className="">
@@ -17,7 +18,7 @@ const CheckoutDetails = () => {
       </div>
       <div className="order-info">
         <h3>TOTAL:</h3>
-        <h3>340$</h3>
+        <h3>{total_amount}$</h3>
       </div>
       <div className="promo">
         <label htmlFor="promo">Promo Code</label>
@@ -32,7 +33,7 @@ const CheckoutDetails = () => {
 const Wrapper = styled.section`
 display: flex;
 flex-direction: column;
-gap:10px;
+gap:50px;
   button ,input{
     width: 100%;
   }

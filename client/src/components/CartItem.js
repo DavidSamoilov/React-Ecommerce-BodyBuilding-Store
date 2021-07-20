@@ -20,12 +20,12 @@ const CartItem = ({ id, image, name, amount, price }) => {
         <img src={image} alt={name} />
         <div className="">
           <h5 className="name">{name}</h5>
-          <h5 className="price-small">{price}</h5>
+          <h5 className="price-small">{price} ₪</h5>
         </div>
       </div>
-      <h5 className="price">{price}</h5>
+      <h5 className="price">{price} ₪</h5>
       <AmountButtons amount={amount} increase={increase} decrease={decrease} />
-      <h5 className="subtotal">{price * amount}</h5>
+      <h5 className="subtotal">{price * amount} ₪</h5>
       <button
         type="button"
         className="remove-btn"

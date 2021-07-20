@@ -62,7 +62,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <h5 className="price">{price}$</h5>
+            <h5 className="price">{price} ₪</h5>
             <p className="desc">{long_description}</p>
             <p className="info">
               <span>Available : </span>

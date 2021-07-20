@@ -12,14 +12,14 @@ const CartTotals = () => {
       <div>
         <article>
           <h5>
-            subtotal : <span>{total_amount}</span>
+            subtotal : <span>{total_amount} ₪</span>
           </h5>
           <p>
-            shipping fee : <span>0</span>
+            shipping fee : <span>0 ₪</span>
           </p>
           <hr />
           <h4>
-            order total : <span>{total_amount}</span>
+            order total : <span>{total_amount} ₪</span>
           </h4>
         </article>
       {auth?(
