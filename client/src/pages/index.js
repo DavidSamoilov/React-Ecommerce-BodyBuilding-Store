@@ -8,6 +8,7 @@ import Error from "./ErrorPage";
 import Checkout from "./CheckoutPage";
 import PrivateRoute from "./PrivatePage";
 import Admin from "./AdminPage";
+import Order from "./OrderPage"
 export {
   Home,
   LoginRegister,
@@ -19,4 +20,5 @@ export {
   Checkout,
   PrivateRoute,
   Admin,
+  Order,
 };

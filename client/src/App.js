@@ -13,6 +13,7 @@ import {
   PrivateRoute,
   LoginRegister,
   Admin,
+  Order,
 } from "./pages";
 const Cookies = require("js-cookie");
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Admin />
         </Route>
         <Route exact path="/products/:id" children={<SingleProduct />} />
+        <Route exact path="/order/:id" children={<Order />} />
         <Route exact path="/checkout">
           <Checkout />
         </Route>

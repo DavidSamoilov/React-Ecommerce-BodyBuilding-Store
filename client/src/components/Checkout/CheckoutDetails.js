@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../../context/cart_context";
 
@@ -27,9 +28,11 @@ const CheckoutDetails = () => {
       </div>
 
       <div className="">
+        <Link to="order/1">
         <button className="btn" type="button">
           Complete Order
         </button>
+        </Link>
       </div>
     </Wrapper>
   );
