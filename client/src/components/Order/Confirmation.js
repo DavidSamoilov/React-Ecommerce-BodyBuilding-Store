@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaMailBulk } from "react-icons/fa";
 import styled from "styled-components";
+import { useCartContext } from "../../context/cart_context";
 
 const Cookies = require("js-cookie");
 
+
 const Confirmation = () => {
+  const {clearCart} = useCartContext()
+  useEffect(()=>{
+    clearCart()
+    },[])
   const user = Cookies.getJSON("userCookie");
   const { first_name: name, email } = user;
   const [isMailSent, setIsMailSent] = useState(false);
@@ -24,7 +30,7 @@ const Confirmation = () => {
           <FaMailBulk />
         </span>
         <input
-          value={email ? email : null}
+          defaultValue={email ? email : null}
           placeholder="Enter email..."
           type="text"
         />

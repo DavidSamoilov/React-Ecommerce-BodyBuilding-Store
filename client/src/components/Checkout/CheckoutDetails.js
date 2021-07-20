@@ -1,11 +1,23 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../../context/cart_context";
-
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
+import CheckoutSingleItem from "./CheckoutSingleItem";
 const CheckoutDetails = () => {
   const { cart, total_amount } = useCartContext();
+
+  let history = useHistory();
+  const sendEmail = () => {
+
+    axios.post("http://localhost:3000/mail",JSON.stringify(cart)).then(
+      res => {history.push('order/1')}
+    ).catch(err => console.log(err))
+
+  }
+  
+  
 
   return (
     <Wrapper>
@@ -28,11 +40,9 @@ const CheckoutDetails = () => {
       </div>
 
       <div className="">
-        <Link to="order/1">
-        <button className="btn" type="button">
+        <button onClick={sendEmail}className="btn" type="button">
           Complete Order
         </button>
-        </Link>
       </div>
     </Wrapper>
   );
