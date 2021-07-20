@@ -1,4 +1,15 @@
-export const featured_products_ids = [1,2,3]
+let allFeaturedArr =[1,2,3,4,5,6,7,8,9]
+export const featured_products_ids = (() => {
+    const randomIndexArr = []
+    const len = allFeaturedArr.length
+    while(randomIndexArr.length < 3){
+        let curRandomIndex = Math.floor(Math.random()  * len) + 1
+        if(!(randomIndexArr.includes(curRandomIndex))){
+            randomIndexArr.push(curRandomIndex)
+        }
+    }
+    return randomIndexArr
+})()
 
 export const links = [
     {

@@ -19,7 +19,6 @@ function App() {
   const { setAuth } = useAuthContext();
   const readCookie = () => {
     const user = Cookies.getJSON("userCookie");
-    console.log(user);
     if(user){
       if (user.id) {
         setAuth(true);
