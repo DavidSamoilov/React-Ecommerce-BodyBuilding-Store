@@ -108,7 +108,6 @@ exports.delete = (req, res) => {
 };
 
 exports.login =  (req, res) => {
-  console.log(11);
   const {email,password} = req.body;
   User.findOne({where:{email,password}})
     .then(data => {

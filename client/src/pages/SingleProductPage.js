@@ -50,7 +50,6 @@ const SingleProductPage = () => {
     long_description,
     images,
   } = product;
-  console.log("images1", images);
   return (
     <Wrapper>
       <PageHero title={name} product={name} />

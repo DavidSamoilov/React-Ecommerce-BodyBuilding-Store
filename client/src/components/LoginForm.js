@@ -41,9 +41,7 @@ const LoginForm = () => {
       },
       config
     ).then((response) => {
-      console.log(response);
       setAuth(true);
-      console.log("good");
       history.push("/");
     });
   };

@@ -43,7 +43,6 @@ const api = (() => {
   };
 
  
-  // console.log("newUser", usersDal);
 
   const categoriesDal = [
     { id: 1, name: "Clothing", parent_category: undefined },

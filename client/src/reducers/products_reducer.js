@@ -13,9 +13,7 @@ import {
 
 // getting state and action
 const products_reducer = (state, action) => {
-  console.log("products_reducer is running *test");
   if (action.type === SIDEBAR_OPEN) {
-    console.log(action);
     return { ...state, isSidebarOpen: true };
   }
   if (action.type === SIDEBAR_CLOSE) {

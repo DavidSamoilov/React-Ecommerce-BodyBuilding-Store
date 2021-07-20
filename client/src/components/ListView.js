@@ -6,7 +6,6 @@ const ListView = ({ products }) => {
   return (
     <Wrapper>
       {products.map((product) => {
-        console.log(product);
         const { id, images, name, price, long_description, short_description } =
           product;
         return (

@@ -16,8 +16,6 @@ router.post("/", function (req, res, next) {
     text: "hello",
     html: `<h1>items</h1>`,
   };
-  console.log("cookies", req.cookies);
-
   sgMail
     .send(emailMSG)
     .then((response) => res.send(response))
