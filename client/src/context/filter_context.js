@@ -19,8 +19,6 @@ const initialState = {
   sort: "price-lowest",
   filters: {
     text: "",
-    company: "all",
-    category: "all",
     min_price: 0,
     max_price: 0,
     price: 0,
@@ -37,9 +35,8 @@ export const FilterProvider = ({ children }) => {
   }, [products])
   
 
-  
   useEffect(() => {
-    dispatch({ type: FILTER_PRODUCTS })
+    // dispatch({ type: FILTER_PRODUCTS })
     dispatch({ type: SORT_PRODUCTS })
   }, [products, state.sort, state.filters])
   
@@ -58,9 +55,6 @@ export const FilterProvider = ({ children }) => {
   const updateFilters = (e) => {
     let name = e.target.name
     let value = e.target.value
-    if (name === 'category') {
-      value = e.target.textContent
-    }
     if (name === 'price') {
       value = Number(value)
     }
