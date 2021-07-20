@@ -5,6 +5,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const port = 5000;
 var app = express();
+app.get(("/",(req,res) =>{
+  res.send("hello world")
+}))
+
 const cors = require("cors");
 
 app.use(cors({ credentials:true,origin:'http://localhost:3000'}))
@@ -44,7 +48,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(port, () => {
+app.listen( process.env.PORT ||port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
