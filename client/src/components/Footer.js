@@ -1,14 +1,22 @@
 import React from "react";
+import {FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import styled from "styled-components";
+import {IconContext} from "react-icons";
 
 const Footer = () => {
   return (
     <Wrapper>
+      <div className="social">
+        <FaInstagramSquare size={40} color={"red"}/>
+        <FaFacebookSquare size={40} color={"red"}/>
+      </div>
+      <div className="info">
     <h5>
         {new Date().getFullYear()}
       <span> David's Gym</span>
     </h5>
       <h5>All rights reserved to David</h5>
+      </div>
     </Wrapper>
   );
 };
@@ -21,6 +29,17 @@ const Wrapper = styled.footer`
     align-items: center;
     background: var(--clr-black);
     text-align:center;
+    .social{
+      color: red;
+    }
+    .social:hover{
+      cursor: pointer;
+      border-radius: var(--radius);
+      
+    }
+    .info{
+      display: flex;
+    }
     span{
       color: var( --clr-primary-5);
     }
@@ -33,7 +52,10 @@ const Wrapper = styled.footer`
       line-height: 1.25;
     }
     @media (min-width: 776px){
-      flex-direction: row;
+      .info{
+
+        flex-direction: row;
+      }
     }
 
 
