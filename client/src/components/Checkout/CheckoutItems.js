@@ -8,8 +8,8 @@ const CheckoutItems = () => {
 
   return (
     <Wrapper>
-      {cart.map((product) => {
-        return <CheckoutSingleItem product={product} />;
+      {cart.map((product,index) => {
+        return <CheckoutSingleItem key={index} product={product} />;
       })}
     </Wrapper>
   );

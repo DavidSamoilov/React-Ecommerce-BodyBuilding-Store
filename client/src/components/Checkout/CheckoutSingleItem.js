@@ -4,7 +4,7 @@ import styled from "styled-components";
 const CheckoutSingleItem = ({ product }) => {
   return (
     <Wrapper>
-      <img src={product.image} alt={product.name} srcset="" />
+      <img src={product.image} alt={product.name} />
       <div className="checkout-info-container">
         <div className="product-name">
           <h4>
@@ -42,6 +42,13 @@ const Wrapper = styled.div`
 
   .checkout-info-container {
     flex: 1;
+  }
+  @media (max-width:1200px){
+    flex-direction: column;
+    .quantity,.price-per-unit,.final-price{
+      display:none
+    }
+
   }
 `;
 

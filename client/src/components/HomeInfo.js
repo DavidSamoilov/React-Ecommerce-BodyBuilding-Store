@@ -29,20 +29,12 @@ const HomeInfo = () => {
 };
 const Wrapper = styled.section`
   .seo-block {
-    line-height: 1.15;
-    --vh: 9.37px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    color: black;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box;
     background-color: #ffffff;
+    padding: 2.4rem;
+    margin: 1.6rem;
     position: relative;
     text-align: left;
     border: 0.1rem solid #bbbcbc;
-    padding: 2rem;
-    margin: 3rem 6rem;
   }
   .seo-block__content {
     line-height: 1.15;
