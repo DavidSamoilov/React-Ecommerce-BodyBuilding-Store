@@ -47,6 +47,21 @@ const LoginForm = () => {
       history.push("/");
     });
   };
+  const loginDemo = () => {
+    Axios.post(
+      "http://localhost:5000/users/login",
+      {
+        email: "DemoUser@gmail.com",
+        password: "DemoUser",
+      },
+      config
+    ).then((response) => {
+      console.log(response);
+      setAuth(true);
+      console.log("good");
+      history.push("/");
+    });
+  };
 
   return (
     <Wrapper className="App">
@@ -70,6 +85,10 @@ const LoginForm = () => {
           <button className="btn" onClick={login}>
             {" "}
             Login{" "}
+          </button>
+          <button className="btn" onClick={loginDemo}>
+            {" "}
+            * Login as Demo User *{" "}
           </button>
           <button className="btn" onClick={loginAdmin}>
             {" "}

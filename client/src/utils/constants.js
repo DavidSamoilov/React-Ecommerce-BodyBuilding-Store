@@ -27,11 +27,7 @@ export const links = [
         text:"Our Vision",
         url: "/vision"
     },
-    {
-        id:4,
-        text:"Admin Dashboard",
-        url:"/admin"
-    }
+    
 ]
 
 export const homepage_categories = [

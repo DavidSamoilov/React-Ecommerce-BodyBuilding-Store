@@ -1,42 +1,60 @@
 import React from "react";
-import CartButtons from './CartButtons'
+import CartButtons from "./CartButtons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaBars } from 'react-icons/fa'
+import { FaBars } from "react-icons/fa";
 import { links } from "../utils/constants";
-import logo from "../assets/logo.jpg"
-import { useProductsContext } from '../context/products_context'
+import logo from "../assets/logo.jpg";
+import { useProductsContext } from "../context/products_context";
+import { useAuthContext } from "../context/AuthApi";
+const Cookies = require("js-cookie");
 
 const Navigation = () => {
-  const { openSidebar } = useProductsContext()
-  return(
+  const { user, auth } = useAuthContext();
+  const admin_panel = {
+    id: 4,
+    text: "Admin Dashboard",
+    url: "/admin",
+  };
+
+  const user_panel = {
+    id: 5,
+    text: "My Profile",
+    url: "/profile",
+  }
+  const { openSidebar } = useProductsContext();
+  return (
     <NavContainer>
-      <div className='nav-center'>
-      <div className='nav-header'>
-          <Link to='/'>
-            <img src={logo} alt='DavesGym logo' />
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="DavesGym logo" />
           </Link>
-          <button type='button' className='nav-toggle' onClick={openSidebar}>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
-        <ul className='nav-links'>
+        <ul className="nav-links">
           {links.map((link) => {
-            const { id, text, url } = link
+            const { id, text, url } = link;
             return (
               <li key={id}>
                 <Link to={url}>{text}</Link>
               </li>
-            )
+            );
           })}
+          {auth && <li key={user_panel.id}>
+                <Link to={user_panel.url}>{user_panel.text}</Link>
+              </li>}
+          {Cookies.getJSON("userCookie").is_admin && <li key={admin_panel.id}>
+                <Link to={admin_panel.url}>{admin_panel.text}</Link>
+              </li>}
         </ul>
         <CartButtons />
       </div>
     </NavContainer>
-  )
-
+  );
 };
-
 
 const NavContainer = styled.nav`
   height: 5rem;
@@ -61,7 +79,7 @@ const NavContainer = styled.nav`
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color:var(--clr-primary-5);
+    color: var(--clr-primary-5);
     cursor: pointer;
     svg {
       font-size: 2rem;
@@ -90,7 +108,7 @@ const NavContainer = styled.nav`
         margin: 0 0.5rem;
       }
       a {
-        color:grey;  /* /var(--clr-grey-3); */
+        color: grey; /* /var(--clr-grey-3); */
         font-size: 1rem;
         text-transform: capitalize;
         letter-spacing: var(--spacing);
@@ -104,6 +122,6 @@ const NavContainer = styled.nav`
       display: grid;
     }
   }
-  `
+`;
 
 export default Navigation;
