@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-const CheckoutItem = ({ id, image, name, amount, price ,short_description}) => {
-
+const CheckoutItem = ({product}) => {
+  const { id, image, name, amount, price ,short_description} = product
   return (
     <Wrapper>
       <div className="title">
@@ -20,6 +20,7 @@ const CheckoutItem = ({ id, image, name, amount, price ,short_description}) => {
 };
 
 const Wrapper = styled.article`
+font-size: 25px;
   .subtotal {
     display: none;
   }
@@ -36,7 +37,7 @@ const Wrapper = styled.article`
   .title {
     height: 100%;
     display: grid;
-    grid-template-columns: 75px 125px;
+    grid-template-columns: 100px 125px;
     align-items: center;
     text-align: left;
     gap: 1rem;

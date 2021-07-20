@@ -5,14 +5,20 @@ import CheckoutItems from './Checkout/CheckoutItems'
 
 const CheckoutContent = () => {
     return (
-        <div>
-            <CheckoutDetails/>
+        <Wrapper>
             <CheckoutItems/>
-        </div>
+            <CheckoutDetails/>
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.main`
+display: flex;
+gap:2rem;
+
+@media (max-width:1200px){
+    flex-direction: column-reverse;
+}
 `
 
 export default CheckoutContent

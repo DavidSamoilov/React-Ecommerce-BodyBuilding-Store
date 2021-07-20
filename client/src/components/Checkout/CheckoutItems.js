@@ -1,11 +1,24 @@
 import React from 'react'
+import styled from 'styled-components';
+import { useCartContext } from '../../context/cart_context';
+import CheckoutItem from '../CheckoutItem';
+import CheckoutSingleItem from './CheckoutSingleItem';
 
 const CheckoutItems = () => {
+    const { cart } = useCartContext();
+
     return (
-        <div>
-            
-        </div>
+        <Wrapper>
+            {cart.map((product)=>{
+                return <CheckoutSingleItem product={product}/>
+            })}
+        </Wrapper>
     )
 }
+const Wrapper = styled.section`
+display: flex;
+flex-direction: column;
+gap: 3rem;
+`
 
 export default CheckoutItems
