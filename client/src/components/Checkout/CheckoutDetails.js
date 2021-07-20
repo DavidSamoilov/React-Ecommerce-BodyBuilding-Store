@@ -15,17 +15,17 @@ const CheckoutDetails = () => {
       </div>
       <div className="order-info">
         <div className="total">
-        <h3>TOTAL:</h3>
-        <h3>{total_amount} ₪</h3>
+          <h3>TOTAL:</h3>
+          <h3>{total_amount} ₪</h3>
         </div>
         <div className="promo">
-        <label htmlFor="promo">Promo Code</label>
-        <div className="">
-          <input type="text" id="promo" />
+          <label htmlFor="promo">Promo Code</label>
+          <div className="">
+            <input type="text" id="promo" />
+          </div>
         </div>
       </div>
-      </div>
-     
+
       <div className="">
         <button className="btn" type="button">
           Complete Order
@@ -51,7 +51,7 @@ const Wrapper = styled.section`
     justify-content: space-between;
     flex-direction: column;
   }
-  .total{
+  .total {
     display: flex;
     justify-content: space-between;
   }

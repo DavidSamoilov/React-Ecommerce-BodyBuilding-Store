@@ -1,24 +1,23 @@
-import React from 'react'
-import styled from 'styled-components';
-import { useCartContext } from '../../context/cart_context';
-import CheckoutItem from '../CheckoutItem';
-import CheckoutSingleItem from './CheckoutSingleItem';
+import React from "react";
+import styled from "styled-components";
+import { useCartContext } from "../../context/cart_context";
+import CheckoutSingleItem from "./CheckoutSingleItem";
 
 const CheckoutItems = () => {
-    const { cart } = useCartContext();
+  const { cart } = useCartContext();
 
-    return (
-        <Wrapper>
-            {cart.map((product)=>{
-                return <CheckoutSingleItem product={product}/>
-            })}
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      {cart.map((product) => {
+        return <CheckoutSingleItem product={product} />;
+      })}
+    </Wrapper>
+  );
+};
 const Wrapper = styled.section`
-display: flex;
-flex-direction: column;
-gap: 3rem;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
 
-export default CheckoutItems
+export default CheckoutItems;
