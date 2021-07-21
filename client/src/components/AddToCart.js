@@ -38,7 +38,7 @@ const AddToCart = ({ product }) => {
       </button>
     </AmountWrapper>
       <Link
-          to='/cart'
+          to='/products'
           className='btn'
           onClick={() => addToCart(id, amount, product)}
         >

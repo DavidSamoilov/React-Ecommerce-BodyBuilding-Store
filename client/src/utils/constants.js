@@ -1,4 +1,4 @@
-let allFeaturedArr =[1,2,3,4,5,6,7,8,9]
+let allFeaturedArr =[1,2,3,4,5,6,7,8,9,10,12]
 export const featured_products_ids = (() => {
     const randomIndexArr = []
     const len = allFeaturedArr.length

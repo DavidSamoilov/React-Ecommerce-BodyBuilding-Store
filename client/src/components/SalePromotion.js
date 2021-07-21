@@ -15,12 +15,19 @@ const SalePromotion = () => {
   );
 };
 const Wrapper = styled.article`
-  padding: 2rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   img {
-    width: 65vw;
+    width: 100vw;
+    height: 17vh;
+  }
+
+  @media (max-width:720px){
+    img {
+    height: 10vh;
+  }
   }
 `;
 export default SalePromotion;

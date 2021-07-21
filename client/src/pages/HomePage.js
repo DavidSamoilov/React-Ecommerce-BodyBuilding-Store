@@ -5,10 +5,10 @@ import {HomeInfo, FeaturedProducts, SalePromotion,HomeCategories } from "../comp
 const HomePage = () => {
   return (
     <main>
-      <FeaturedProducts />
-      {/* ShopHeader Section */}
       <SalePromotion />
       <HomeCategories/>
+      <FeaturedProducts />
+      {/* ShopHeader Section */}
       <HomeInfo/>
     </main>
   );
