@@ -20,7 +20,7 @@ const Wrapper = styled.article`
   justify-content: center;
   align-items: center;
   img {
-    width: 100vw;
+    width: 99vw;
     height: 17vh;
   }
 
