@@ -16,28 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categories`
+-- Table structure for table `user_address`
 --
 
-DROP TABLE IF EXISTS `categories`;
+DROP TABLE IF EXISTS `user_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categories` (
+CREATE TABLE `user_address` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `parent_category_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `user_id` int NOT NULL,
+  `city` varchar(20) NOT NULL,
+  `street` varchar(30) NOT NULL,
+  `street number` varchar(30) DEFAULT NULL,
+  `country` varchar(25) NOT NULL,
+  `full_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id_idx` (`user_id`),
+  CONSTRAINT `user_adress_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categories`
+-- Dumping data for table `user_address`
 --
 
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Clothing',NULL),(2,'Supplements',NULL),(3,'Shoes',1),(4,'Shirts',1);
-/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+LOCK TABLES `user_address` WRITE;
+/*!40000 ALTER TABLE `user_address` DISABLE KEYS */;
+INSERT INTO `user_address` VALUES (1,1,'Ashdod1','Zahav','11','Israel','David Samoilov'),(2,2,'Natanya','Herzel','70','Israel','Test Test'),(3,1,'Rishon Lezion','Tapuz','2','Israel','David Samoilov');
+/*!40000 ALTER TABLE `user_address` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-14  1:24:40
+-- Dump completed on 2021-08-10  1:36:58

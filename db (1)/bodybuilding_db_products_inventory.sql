@@ -16,34 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_address`
+-- Table structure for table `products_inventory`
 --
 
-DROP TABLE IF EXISTS `user_address`;
+DROP TABLE IF EXISTS `products_inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_address` (
+CREATE TABLE `products_inventory` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
-  `city` varchar(20) NOT NULL,
-  `street` varchar(30) NOT NULL,
-  `street number` varchar(30) DEFAULT NULL,
-  `country` varchar(25) NOT NULL,
-  `full_name` varchar(45) NOT NULL,
+  `product_id` int NOT NULL,
+  `quantity` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id_idx` (`user_id`),
-  CONSTRAINT `user_adress_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  KEY `product_inventory_product_id_idx` (`product_id`),
+  CONSTRAINT `product_inventory_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_address`
+-- Dumping data for table `products_inventory`
 --
 
-LOCK TABLES `user_address` WRITE;
-/*!40000 ALTER TABLE `user_address` DISABLE KEYS */;
-INSERT INTO `user_address` VALUES (1,1,'Ashdod1','Zahav','11','Israel','David Samoilov'),(2,2,'Natanya','Herzel','70','Israel','Test Test'),(3,1,'Rishon Lezion','Tapuz','2','Israel','David Samoilov');
-/*!40000 ALTER TABLE `user_address` ENABLE KEYS */;
+LOCK TABLES `products_inventory` WRITE;
+/*!40000 ALTER TABLE `products_inventory` DISABLE KEYS */;
+INSERT INTO `products_inventory` VALUES (1,1,30),(2,2,285),(3,3,159);
+/*!40000 ALTER TABLE `products_inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-14  1:24:39
+-- Dump completed on 2021-08-10  1:36:57

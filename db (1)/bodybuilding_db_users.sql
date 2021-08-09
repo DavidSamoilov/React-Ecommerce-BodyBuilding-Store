@@ -31,7 +31,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='			';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='			';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'dada7117@gmail.com','admin','David',1),(2,'test@gmail1.com','test1','test1',0),(3,'test2@gmail.com','test2','test2',0),(4,'mishel@gmail.com','mishel1990','mishel',0),(5,'jake@gmail.com','123456','Jake smith',0),(6,'Jake bonzal','jake123@gmail.com','123456',0),(7,'jake123@gmail.com','123456','Jake bonzal',0),(12,'David123@gmail.com','123456','David23 Bonza',0),(27,'Davi11d11112313123@gmail.com','123456','David23 Bonza',0),(35,'Davi11d111123113123@gmail.com','123456','David23 Bonza',0),(36,'Davi11d1111231131213@gmail.com','123456','David23 Bonza',0),(37,'123123@gmail.com','123456','David23 Bonza',0),(40,'testtest@gmail.com','123456','David23 Bonza',0),(43,'13534645756867854654654@gmail.com','123456','David23 Bonza',0),(46,'11111111111111@gmail.com','123456','David23 Bonza',0),(48,'1111111111@gmail.com','123456','David23 Bonza',0);
+INSERT INTO `users` VALUES (1,'dada7117@gmail.com','admin','David',1),(2,'test@gmail1.com','test1','test1',0),(3,'test2@gmail.com','test2','test2',0),(4,'mishel@gmail.com','mishel1990','mishel',0),(5,'jake@gmail.com','123456','Jake smith',0),(6,'Jake bonzal','jake123@gmail.com','123456',0),(7,'jake123@gmail.com','123456','Jake bonzal',0),(12,'David123@gmail.com','123456','David23 Bonza',0),(27,'Davi11d11112313123@gmail.com','123456','David23 Bonza',0),(35,'Davi11d111123113123@gmail.com','123456','David23 Bonza',0),(36,'Davi11d1111231131213@gmail.com','123456','David23 Bonza',0),(37,'123123@gmail.com','123456','David23 Bonza',0),(40,'testtest@gmail.com','123456','David23 Bonza',0),(43,'13534645756867854654654@gmail.com','123456','David23 Bonza',0),(46,'11111111111111@gmail.com','123456','David23 Bonza',0),(48,'1111111111@gmail.com','123456','David23 Bonza',0),(52,'1111@gmail.com','123456','David23 Bonza',0),(54,'DemoUser@gmail.com','DemoUser','Demo User',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-14  1:24:39
+-- Dump completed on 2021-08-10  1:36:57

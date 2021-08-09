@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `product_categories`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `product_categories`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product_categories` (
-  `product_id` int NOT NULL,
-  `category_id` int NOT NULL,
-  PRIMARY KEY (`product_id`,`category_id`),
-  KEY `category_id_idx` (`category_id`),
-  CONSTRAINT `product_categories_categoryIdfk` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
-  CONSTRAINT `product_categories_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `categories` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `parent_category_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product_categories`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `product_categories` WRITE;
-/*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
-INSERT INTO `product_categories` VALUES (1,1),(2,1),(3,2),(2,3),(1,4);
-/*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Clothing',NULL),(2,'Supplements',NULL),(3,'Shoes',1),(4,'Shirts',1);
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-14  1:24:37
+-- Dump completed on 2021-08-10  1:36:58
